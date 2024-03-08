@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-02-25 Sun 18:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Finding a rental apartment</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Finding a rental apartment</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6e9c357">1. Intro</a></li>
+<li><a href="#org95547d0">2. Plan</a></li>
+<li><a href="#org6cd5a48">3. Result</a></li>
+<li><a href="#org3915748">4. Analyze &amp; conclusion</a>
+<ul>
+<li><a href="#org49f0a69">4.1. Overall analysis</a></li>
+<li><a href="#orgd6a328a">4.2. Score metric</a></li>
+</ul>
+</li>
+<li><a href="#org28e593e">5. Candidates</a></li>
+<li><a href="#orge06784d">6. Honorable mentions</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org6e9c357" class="outline-2">
+<h2 id="org6e9c357"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Just out of curiosity, I went to look for an apartment to rent one I get a job<br />
+There are five tags to filter by in the search result, but if you visit an apartment page, you will find more tags that could be used as filters.<br />
+I made the search result more optimal by gathering all the tags from all the apartments in the site and filter down by tags such as: Sea view.<br />
+</p>
+
+<p>
+Here is a <a href="https://drive.google.com/drive/folders/1kX70hStWMveKN1cgkKc9-XXZv1tALWhD?usp=share_link">link</a> to data folder.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org95547d0" class="outline-2">
+<h2 id="org95547d0"><span class="section-number-2">2.</span> Plan</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Gathering all the links of apartments for rent<br /></li>
+<li>Gathering all tags from each link<br /></li>
+<li>Gather the Geo-location data of each apartment to see is such places like restaurants, hospital.. are close to the place.<br /></li>
+<li>Manipulate and clean the data<br /></li>
+<li>Analyses and conclude<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6cd5a48" class="outline-2">
+<h2 id="org6cd5a48"><span class="section-number-2">3.</span> Result</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Rows : 6724<br /></li>
+<li>Columns : 89<br /></li>
+<li>Link to full data: <a href="https://docs.google.com/spreadsheets/d/12z2wZ0XLNvzNKz2j66lcXlNZgN7q5MJ6/edit?usp=sharing&amp;ouid=100716228614230911582&amp;rtpof=true&amp;sd=true">Google sheet</a><br /></li>
+<li>Link to reviewing data: <a href="https://docs.google.com/spreadsheets/d/1_Qz0sLFzP133LZ8m9dgtXxZjo2C1Jv2v/edit?usp=sharing&amp;ouid=100716228614230911582&amp;rtpof=true&amp;sd=true">Google sheet</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3915748" class="outline-2">
+<h2 id="org3915748"><span class="section-number-2">4.</span> Analyze &amp; conclusion</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org49f0a69" class="outline-3">
+<h3 id="org49f0a69"><span class="section-number-3">4.1.</span> Overall analysis</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="question" id="org4290417">
+<p>
+What city have the cheapest and the biggest apartment for rent?<br />
+</p>
+
+</div>
+
+<p>
+The price variable is anything but normally distributed, since there are apartments for monthly and daily rent.<br />
+Thus I have used the <b>median</b> in my calculations, and to be somewhat statistically correct I only used city data with at least 30 observation.<br />
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">City</th>
+<th scope="col" class="org-right">Count</th>
+<th scope="col" class="org-right">Price in USD</th>
+<th scope="col" class="org-right">Area in m²</th>
+<th scope="col" class="org-right">Pieces</th>
+<th scope="col" class="org-right">N_features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Kénitra</td>
+<td class="org-right">91</td>
+<td class="org-right">500</td>
+<td class="org-right">95</td>
+<td class="org-right">3</td>
+<td class="org-right">12</td>
+</tr>
+
+<tr>
+<td class="org-left">Marrakech</td>
+<td class="org-right">337</td>
+<td class="org-right">740</td>
+<td class="org-right">97</td>
+<td class="org-right">3</td>
+<td class="org-right">12</td>
+</tr>
+
+<tr>
+<td class="org-left">Tanger</td>
+<td class="org-right">685</td>
+<td class="org-right">940</td>
+<td class="org-right">120</td>
+<td class="org-right">4</td>
+<td class="org-right">14</td>
+</tr>
+
+<tr>
+<td class="org-left">Casablanca</td>
+<td class="org-right">3490</td>
+<td class="org-right">940</td>
+<td class="org-right">100</td>
+<td class="org-right">3</td>
+<td class="org-right">12</td>
+</tr>
+
+<tr>
+<td class="org-left">Rabat</td>
+<td class="org-right">747</td>
+<td class="org-right">1190</td>
+<td class="org-right">120</td>
+<td class="org-right">3</td>
+<td class="org-right">12</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Personally I think I will go with Tanger because:<br />
+</p>
+<ol class="org-ol">
+<li>It is near Spain<br /></li>
+<li>The fastest train can stop on it and on my hometown Rabat (not exactly, but I live near Rabat)<br /></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd6a328a" class="outline-3">
+<h3 id="orgd6a328a"><span class="section-number-3">4.2.</span> Score metric</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+I don't want to spend time looking at +6700 apartment, so I will rank them using a metric and start from the highest scored apartment, since it is most likely to be a hit.<br />
+</p>
+
+<div class="question" id="org40f52e1">
+<p>
+What variables should the score metric be base on?<br />
+</p>
+
+</div>
+
+<ul class="org-ul">
+<li><b>Area</b>: The area of the apartment, the <b>bigger</b> the better.<br /></li>
+<li><b>Pictures</b>: The number of pictures the owner have posted to be reviewed.<br /></li>
+<li><b>Pieces</b>: The number bedrooms and living areas, the <b>more</b> the better.<br /></li>
+<li><b>Stage</b>: The floor number.<br /></li>
+<li><b>Price</b>: The price of monthly rent, the <b>lower</b> the better.<br /></li>
+<li><b>Old</b>: The buildings' age, the <b>lower</b> the better<br /></li>
+<li><b>Features_number</b>: The total number of features a building/apartment have, the <b>more</b> the better.<br />
+<span class="underline">The features are</span>: Air conditioning, Box room, Concierge, Double glazing, <b>Elevator</b>, Equipped kitchen, European lounge, Exterior facade, Fireplace, Flooring: Marble, Flooring: Tiled, Flooring: Wooden, Fridge, <b>Furnished</b>, Garage, Garden, Heating, Internet, Microwave, Moroccan lounge, Mountains views, Orientation: East, Orientation: North, Orientation: South, Orientation: West, Oven, Pets allowed, Pool, Reinforced Door, Satellite dish, <b>Sea views</b>, Security system, TV, <b>Terrace</b>, and Washing machine.<br /></li>
+<li><b>Places_number</b>: The total number of places near the building/apartment, the <b>more</b> the better.<br />
+<b>Example</b>: near the building there are 4 ATM's, 7 Cafe, 1 Hospital, 1 Store. the place number will be \(4+7+1+1=13\).<br />
+<span class="underline">The places are</span>: <b>ATM</b>, <b>bakery</b>, <b>cafe</b>, dentist, <b>doctor</b>, gas_station, gym, hair_care, <b>hospital</b>, meal_delivery, meal_takeaway, park, pharmacy, physiotherapist, police, post_office, <b>restaurant</b>, school, shopping_mall, spa, store, <b>supermarket</b>, tourist_attraction, train_station, transit_station, and university.<br /></li>
+</ul>
+
+<p>
+\[Score=\frac{\log{(Area)}*\log{(Pictures+1)}*\log{(Pieces+1)}*\log{(Stage+1)}}{\log{(Price)}*\log{(Old)}}*\log{Features}*\log{Places}\]<br />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org28e593e" class="outline-2">
+<h2 id="org28e593e"><span class="section-number-2">5.</span> Candidates</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li><p>
+$800/month - <a href="https://www.mubawab.ma/en/a/7614164/very-nice-apartment-for-rent-in-centre-3-large-rooms-attic-">Link</a> - <a href="https://maps.google.com/?q=35.77822464554652,-5.804820668278934">G-Map</a><br />
+</p>
+
+<div id="org32725a4" class="figure">
+<p><img src="img/rent_appartment/photo_3_38989002.jpg" alt="photo_3_38989002.jpg" width="70%" /><br />
+</p>
+</div></li>
+
+<li><p>
+$750/month - <a href="https://www.mubawab.ma/en/a/7810342/rent-an-apartment-in-de-la-plage-2-large-living-areas-storage-unit-">Link</a> - No accurate info<br />
+</p>
+
+<div id="orge1c4143" class="figure">
+<p><img src="img/rent_appartment/2_60448919.jpg" alt="2_60448919.jpg" height="600px" /><br />
+</p>
+</div></li>
+
+<li><p>
+$900/month - <a href="https://www.mubawab.ma/en/a/7623196/find-an-apartment-for-rent-in-malabata-3-beautiful-rooms-storage-unit-">Link</a> - <a href="https://maps.google.com/?q=35.79196953346613,-5.754137183525451">G-Map</a><br />
+</p>
+
+<div id="orgc41d1f0" class="figure">
+<p><img src="img/rent_appartment/photo_5_39846259.jpg" alt="photo_5_39846259.jpg" width="70%" margin-top="-30px" /><br />
+</p>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge06784d" class="outline-2">
+<h2 id="orge06784d"><span class="section-number-2">6.</span> Honorable mentions</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li><p>
+$2700/month - <a href="https://www.mubawab.ma/en/a/7515633/great-apartment-for-rent-in-ain-diab-8-large-rooms-new-furniture-">Link</a> - <a href="https://www.google.com/maps/place/Luxury+flat+front+beach+Marina/@33.6106446,-7.6255888,15z/data=!4m6!3m5!1s0xda7d3f86560ee8d:0x13b0e8b4623bf611!8m2!3d33.6106446!4d-7.6255888!16s%2Fg%2F11s54k036s?entry=ttu">G-Map</a><br />
+</p>
+
+<div id="org9aeeecb" class="figure">
+<p><img src="img/rent_appartment/be77407e-ac3b-469f-bb74-eb6fec46202d_30503433.jpg" alt="be77407e-ac3b-469f-bb74-eb6fec46202d_30503433.jpg" width="70%" /><br />
+</p>
+</div></li>
+
+<li><p>
+$2800/month - <a href="https://www.mubawab.ma/en/a/7855736/find-an-apartment-for-rent-in-ain-diab-2-lovely-rooms-furnishings-">Link</a> - <a href="https://www.google.com/maps/place/Luxury+flat+front+beach+Marina/@33.6106446,-7.6255888,15z/data=!4m6!3m5!1s0xda7d3f86560ee8d:0x13b0e8b4623bf611!8m2!3d33.6106446!4d-7.6255888!16s%2Fg%2F11s54k036s?entry=ttu">G-Map</a><br />
+</p>
+
+<div id="org6c8fa91" class="figure">
+<p><img src="img/rent_appartment/WhatsApp Image 2024-01-13 at 14.39.15_66689745.jpeg" alt="WhatsApp Image 2024-01-13 at 14.39.15_66689745.jpeg" width="70%" /><br />
+</p>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-03-20 Mon 13:21</p>
+<p class="date">Created: 2024-02-25 Sun 18:16</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
