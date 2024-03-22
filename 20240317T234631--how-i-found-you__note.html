@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-22 Fri 20:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How I found you?</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">How I found you?</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgdac5a48">1. Introduction</a></li>
+<li><a href="#orga57a870">2. Plan</a>
+<ul>
+<li><a href="#orgbeca764">2.1. Scraping Google map</a></li>
+<li><a href="#org7805fba">2.2. Getting more Geo-data</a></li>
+<li><a href="#org4b7606e">2.3. Getting Domain public Informations</a></li>
+<li><a href="#org9249b5e">2.4. Getting Website data</a></li>
+<li><a href="#org46ab366">2.5. Prioritiznig metric</a></li>
+<li><a href="#org5c5584b">2.6. Automating e-mail reaching</a></li>
+</ul>
+</li>
+<li><a href="#org2de8c26">3. Results</a></li>
+</ul>
+</div>
+</div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0T1EQTBKL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z0T1EQTBKL');
+</script>
+<div id="outline-container-orgdac5a48" class="outline-2">
+<h2 id="orgdac5a48"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In this project I want to gather as much  agencys email addresses and additional information to justify who to prioritize first, and when to send my proposal email.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga57a870" class="outline-2">
+<h2 id="orga57a870"><span class="section-number-2">2.</span> Plan</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgbeca764" class="outline-3">
+<h3 id="orgbeca764"><span class="section-number-3">2.1.</span> Scraping Google map</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Due to google restrictions against bots, this process will be semi-automated.<br />
+I have used the Selenium browser to open up Google Map, searched "Marketing agency near x city", and executed a script that record the result from the browser into a data frame.<br />
+</p>
+
+<p>
+The full raw data can be found here, but <a href="https://drive.google.com/file/d/1zEb4uqAkEosuF5lagsaXs0jcK4klKj4D/view?usp=sharing">here</a> is a sample:<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-left">g_url</th>
+<th scope="col" class="org-left">w_url</th>
+<th scope="col" class="org-left">stars</th>
+<th scope="col" class="org-left">b_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Sojern Inc</td>
+<td class="org-left"><a href="https://www.google.com/maps/place/Sojern+Inc/data=!4m7!3m6!1s0x8085807cdd2abe65:0x882cf2a167eb8abf!8m2!3d37.7896521!4d-122.4003907!16s%2Fg%2F1hc4dxs1n!19sChIJZb4q3XyAhYARv4rrZ6HyLIg?authuser=0&amp;hl=en&amp;rclk=1">url</a></td>
+<td class="org-left"><a href="file://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=DChcSEwjordDzzO-EAxWbOQYAHfizCsAYABAAGgJ3cw&amp;gclid=EAIaIQobChMI6K3Q88zvhAMVmzkGAB34swrAEBAYASAAEgLO2_D_BwE&amp;ohost=www.google.com&amp;cid=CAASJORogtm4aKKpgK0sgSnnT0AVM-ZfaD37CW2N3W8T1sJ5lwJUaQ&amp;sig=AOD64_2CPOC_oBSuMlGRT4V8kd0BE_5Wdg&amp;adurl&amp;q&amp;ctype=99">url</a></td>
+<td class="org-left">3.4 stars 7 Reviews</td>
+<td class="org-left">Advertising agency</td>
+</tr>
+
+<tr>
+<td class="org-left">Segal Communications</td>
+<td class="org-left"><a href="https://www.google.com/maps/place/Segal+Communications/data=!4m7!3m6!1s0x80859b080b40a463:0xf19badfb8c9807e5!8m2!3d37.7916435!4d-122.4055604!16s%2Fg%2F11h76bwf5v!19sChIJY6RACwibhYAR5QeYjPutm_E?authuser=0&amp;hl=en&amp;rclk=1">url</a></td>
+<td class="org-left"><a href="file://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=DChcSEwjordDzzO-EAxWbOQYAHfizCsAYABAHGgJ3cw&amp;gclid=EAIaIQobChMI6K3Q88zvhAMVmzkGAB34swrAEBAYAiAAEgJthfD_BwE&amp;ohost=www.google.com&amp;cid=CAASJORogtm4aKKpgK0sgSnnT0AVM-ZfaD37CW2N3W8T1sJ5lwJUaQ&amp;sig=AOD64_0CMkVKJbvTfmUzLaXBXGUEnsypMg&amp;adurl&amp;q&amp;ctype=99">url</a></td>
+<td class="org-left">5.0 stars 5 Reviews</td>
+<td class="org-left">Public relations firm</td>
+</tr>
+
+<tr>
+<td class="org-left">Cyrusson Inc</td>
+<td class="org-left"><a href="https://www.google.com/maps/place/Cyrusson+Inc/data=!4m7!3m6!1s0x808f7fe7a7b5162b:0xce397d3d6d937583!8m2!3d37.7140936!4d-122.4433956!16s%2Fg%2F11hds7r7g8!19sChIJKxa1p-d_j4ARg3WTbT19Oc4?authuser=0&amp;hl=en&amp;rclk=1">url</a></td>
+<td class="org-left"><a href="http://www.cyrusson.com/">url</a></td>
+<td class="org-left">5.0 stars 14 Reviews</td>
+<td class="org-left">Marketing agency</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org7805fba" class="outline-3">
+<h3 id="org7805fba"><span class="section-number-3">2.2.</span> Getting more Geo-data</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+From the variable "g_url" in the raw data above, I can extract the coordinate of a given agency.<br />
+For me to send emails exactly during the working hours I needed the timezone that each agency is in, so I used the coordinates to get the city and country name, among much other information.<br />
+</p>
+
+<p>
+The full raw data can be found here.<br />
+</p>
+
+<p>
+<b>PS:</b> If you were wondering why I couldn't get the city name in the first phase? The results of Google Maps aren't constant when it comes to displaying that information.<br />
+</p>
+
+<div id="orgcf8c875" class="figure">
+<p><img src="img/general/2024-03-19_16-25-28.png" alt="2024-03-19_16-25-28.png" width="70%" /><br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b7606e" class="outline-3">
+<h3 id="org4b7606e"><span class="section-number-3">2.3.</span> Getting Domain public Informations</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+The older an agency the better, or maybe so; getting the year of an agency's creation will be a good variable to put in the prioritization matrix, but where to find this information?<br />
+</p>
+
+<p>
+Luckily, I had the idea of looking for the agency's web domain creation date instead; sadly, some agencies have restricted such info from being publicly shared, but I can work without.<br />
+</p>
+
+<p>
+Also, another variable for the metric was the agency's web domain expiration date; we are in 2024, if a web domain owner extends the expiration date to 2028, it means that the owner trust in the agency's success in the future.<br />
+</p>
+
+<p>
+The full raw data can be found here.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org9249b5e" class="outline-3">
+<h3 id="org9249b5e"><span class="section-number-3">2.4.</span> Getting Website data</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+The data that should be gathered from each agency website is:<br />
+</p>
+<ul class="org-ul">
+<li>Email adress<br /></li>
+<li>Keywords like: career, job, opportunity, remote,<br /></li>
+<li>Data about web page content:<br />
+<ul class="org-ul">
+<li><p>
+<b>page_l</b>: Number of characters(letters, number, symbols) found in the agencys homepage HTML.<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">rank</th>
+<th scope="col" class="org-left">url</th>
+<th scope="col" class="org-right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">top</td>
+<td class="org-left"><a href="https://lowkeydigital.com.au/">lowkeydigital.com.au</a></td>
+<td class="org-right">7000855</td>
+</tr>
+
+<tr>
+<td class="org-left">buttom</td>
+<td class="org-left"><a href="https://www.cavalry.co.nz/">cavalry.co.nz</a></td>
+<td class="org-right">14156</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+My reasoning for capturing this data on websites is, the more characters are there in HTML, the lower the chances the website was made by a full web stack developer.<br />
+After a manual inspection, <a href="https://lowkeydigital.com.au/">lowkeydigital</a> website is using worpderss and elementor, that is why they have so many characters in their HTML file, see image below:<br />
+</p>
+
+<div id="orgc4401de" class="figure">
+<p><img src="img/general/lowkeydigital.png" alt="lowkeydigital.png" width="70%" /><br />
+</p>
+</div></li>
+
+<li><p>
+<b>page_t</b>: Number of characters(letters, number, symbols) found in the agencys homepage text.<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">rank</th>
+<th scope="col" class="org-left">url</th>
+<th scope="col" class="org-right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">top</td>
+<td class="org-left"><a href="https://www.limit.agency/">limit.agency</a></td>
+<td class="org-right">136655</td>
+</tr>
+
+<tr>
+<td class="org-left">buttom</td>
+<td class="org-left"><a href="https://madebymoment.com/">madebymoment.com</a></td>
+<td class="org-right">200</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+<b>page_i</b>: Number of image tags in the the agencys homepage.<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">rank</th>
+<th scope="col" class="org-left">url</th>
+<th scope="col" class="org-right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">top</td>
+<td class="org-left"><a href="https://www.infinitymediala.com/">infinitymediala.com</a></td>
+<td class="org-right">7652</td>
+</tr>
+
+<tr>
+<td class="org-left">buttom</td>
+<td class="org-left"><a href="https://36.agency/">36creative.com</a></td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+<b>page_a</b>: Number of anchor/link tags in the the agencys homepage.<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">rank</th>
+<th scope="col" class="org-left">url</th>
+<th scope="col" class="org-right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">top</td>
+<td class="org-left"><a href="https://www.seoagencylosangelesca.com/">seoagencylosangelesca.com</a></td>
+<td class="org-right">4644</td>
+</tr>
+
+<tr>
+<td class="org-left">buttom</td>
+<td class="org-left"><a href="https://momentumagency.co.nz/">momentumagency.co.nz</a></td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46ab366" class="outline-3">
+<h3 id="org46ab366"><span class="section-number-3">2.5.</span> Prioritiznig metric</h3>
+</div>
+
+<div id="outline-container-org5c5584b" class="outline-3">
+<h3 id="org5c5584b"><span class="section-number-3">2.6.</span> Automating e-mail reaching</h3>
+</div>
+</div>
+
+<div id="outline-container-org2de8c26" class="outline-2">
+<h2 id="org2de8c26"><span class="section-number-2">3.</span> Results</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2024-03-17 Sun 23:46</p>
+<p class="date">Created: 2024-03-22 Fri 20:15</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
