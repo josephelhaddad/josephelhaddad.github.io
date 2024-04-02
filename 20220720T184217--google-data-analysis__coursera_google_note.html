@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-04-02 Tue 17:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>google data analysis</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">google data analysis</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org228d618">1. data analysis</a>
+<ul>
+<li><a href="#orgb4c76a1">1.1. Data ecosystem</a></li>
+<li><a href="#org53061a9">1.2. Data analysis process</a></li>
+<li><a href="#org74b9d37">1.3. Data analysis tools:</a></li>
+<li><a href="#org90a71bd">1.4. what can we get after analysing data</a></li>
+<li><a href="#orgf5a2bbb">1.5. common problems type:</a></li>
+</ul>
+</li>
+<li><a href="#org8712e0f">2. Data analyst</a></li>
+<li><a href="#org7770bfa">3. Data science</a></li>
+<li><a href="#orga35589c">4. Data</a>
+<ul>
+<li><a href="#org2b4af1e">4.1. What is data?</a></li>
+<li><a href="#org3a6e1ae">4.2. Data types</a>
+<ul>
+<li><a href="#org0408f0d">4.2.1. Data types in statistics</a></li>
+<li><a href="#org95e1fc9">4.2.2. Data types in computer science</a></li>
+</ul>
+</li>
+<li><a href="#org2890534">4.3. Bias and data</a></li>
+<li><a href="#orgaaedd7b">4.4. How to get data</a>
+<ul>
+<li><a href="#orgf1f066b">4.4.1. Collect it yourself</a>
+<ul>
+<li><a href="#org11054c4">4.4.1.1. Data ethics and privacy</a></li>
+</ul>
+</li>
+<li><a href="#orgeeb4ae5">4.4.2. Pre collected data</a>
+<ul>
+<li><a href="#org2a52f20">4.4.2.1. Where is the data stored</a></li>
+<li><a href="#org34c721a">4.4.2.2. data credibility</a></li>
+<li><a href="#org7a9ea3e">4.4.2.3. meta data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb2adffb">4.5. How data are put together</a>
+<ul>
+<li><a href="#orgd80e613">4.5.1. Unstructure data</a></li>
+<li><a href="#org4877de0">4.5.2. Structured data</a>
+<ul>
+<li><a href="#org0b88b58">4.5.2.1. Diffirence between Spreadsheet and SQL</a></li>
+<li><a href="#org39f5e5e">4.5.2.2. Database</a></li>
+<li><a href="#orgdb17376">4.5.2.3. Structural data table type:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf076ee4">4.6. Data size in analysis:</a></li>
+<li><a href="#orgfb5e9f6">4.7. Best practices when orginizing datasets and storing</a></li>
+<li><a href="#orge8385c1">4.8. big querry</a></li>
+</ul>
+</li>
+<li><a href="#orge29ae64">5. dictionary</a></li>
+<li><a href="#orgccf3e72">6. Process data</a>
+<ul>
+<li><a href="#org0abe5d3">6.1. Importance of integrity</a></li>
+<li><a href="#org9a8b94a">6.2. sparkling clean data</a>
+<ul>
+<li><a href="#org7802d76">6.2.1. do you need to always clean data</a></li>
+<li><a href="#org38e3f48">6.2.2. What are the types of data that need to be cleaned?</a>
+<ul>
+<li><a href="#org5ff0946">6.2.2.1. duplicate data</a></li>
+<li><a href="#org0d868b2">6.2.2.2. Incomplete data</a></li>
+<li><a href="#org01b3009">6.2.2.3. Innacurate data</a></li>
+<li><a href="#org7546a5d">6.2.2.4. Inconsistant data</a></li>
+<li><a href="#org5b4e7b6">6.2.2.5. Outdated data</a></li>
+<li><a href="#org3c1fa54">6.2.2.6. Inconsistent formating in spreadsheet</a></li>
+</ul>
+</li>
+<li><a href="#orgc342f50">6.2.3. manipulate the data</a></li>
+<li><a href="#org6129fc5">6.2.4. verify and report on your clraning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3ca0893">7. Analyze to answer questions</a>
+<ul>
+<li><a href="#org7bd848e">7.1. Orginizing data to bigen analysis</a></li>
+<li><a href="#org7f7d5d8">7.2. Orginize data for analysis</a></li>
+<li><a href="#org48ded0d">7.3. Formating and adjusting data</a></li>
+<li><a href="#org730588c">7.4. Get support during analysis</a></li>
+<li><a href="#org6563489">7.5. transform and Aggregating data for analysis</a>
+<ul>
+<li><a href="#org0793aae">7.5.1. data gathering:</a></li>
+<li><a href="#orgc89d27b">7.5.2. Performing data calculation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org88c36e8">8. Spreadsheet</a>
+<ul>
+<li><a href="#org4a418e4">8.1. Spreadsheet formulas</a></li>
+<li><a href="#org0491705">8.2. Spreadsheet functions</a>
+<ul>
+<li><a href="#org2620754">8.2.1. Spreadhseet functions - Count duplicate</a></li>
+<li><a href="#org837e299">8.2.2. Spreadsheet functions - COUNTA</a></li>
+<li><a href="#org4def2f9">8.2.3. Spreadsheet functions - COUNTIF</a></li>
+<li><a href="#org36dbf76">8.2.4. Spreadsheet functions - COUNTIFS</a></li>
+<li><a href="#orgce2e8cf">8.2.5. Spreadsheet functions - SUMIF</a></li>
+<li><a href="#org33db162">8.2.6. Spreadsheet functions - SUMPRODUCT</a></li>
+<li><a href="#org84d6a97">8.2.7. Spreadsheet functions - ISBLANK</a></li>
+<li><a href="#org8f33b7f">8.2.8. Spreadsheet functions - ISNUMBER</a></li>
+<li><a href="#orgc641a26">8.2.9. Spreadsheet functions - ISTEXT</a></li>
+<li><a href="#org08e0193">8.2.10. Spreadsheet functions - ISLOGICAL</a></li>
+<li><a href="#orgedcc348">8.2.11. Spreadsheet functions - ISDATE</a></li>
+<li><a href="#org0c90f34">8.2.12. Spreadsheet functions - ISEMAIL</a></li>
+<li><a href="#orgb2f0521">8.2.13. Spreadsheet functions - CONCATENATE</a></li>
+<li><a href="#org98a6259">8.2.14. Spreadsheet functions - LEN</a></li>
+<li><a href="#org6e30734">8.2.15. Spreadsheet functions - TRIM</a></li>
+<li><a href="#orgefb9587">8.2.16. Spreadsheet functions - LEFT</a></li>
+<li><a href="#org9c76193">8.2.17. Spreadsheet functions - MID</a></li>
+<li><a href="#org580fe04">8.2.18. Spreadsheet functions - RIGHT</a></li>
+<li><a href="#org1b83647">8.2.19. Spreadsheet functions - FIND</a></li>
+<li><a href="#org32a50dd">8.2.20. Spreadsheet functions - VLOOKUP</a></li>
+<li><a href="#org195b9b8">8.2.21. Spreadsheet functions - SORT</a></li>
+<li><a href="#orgc1eacf9">8.2.22. Spreadsheet functions - CONVERT</a></li>
+<li><a href="#org572dea8">8.2.23. Spreadsheet functions - VALUE</a></li>
+</ul>
+</li>
+<li><a href="#org1bbced8">8.3. Spreadsheet errors</a></li>
+<li><a href="#org60bcffc">8.4. Spreadsheet tools</a>
+<ul>
+<li><a href="#org7713733">8.4.1. Spreadsheet tools - Freeze</a></li>
+<li><a href="#org3e5083a">8.4.2. Spreadsheet tools - Sort</a></li>
+<li><a href="#org9d7b2a6">8.4.3. Spreadsheet tools - Filter</a></li>
+<li><a href="#org777661c">8.4.4. Spreadsheet tools - Remove duplicate</a></li>
+<li><a href="#org2800188">8.4.5. Spreadsheet tools - Pivot table</a></li>
+<li><a href="#org64c8f9e">8.4.6. Spreadsheet tools - Spell check</a></li>
+<li><a href="#org0e3dddb">8.4.7. Spreadsheet tools - Find and replace</a></li>
+<li><a href="#orgfeac15e">8.4.8. Spreadsheet tools - Format number</a></li>
+<li><a href="#orge75df47">8.4.9. Spreadsheet tools - Clear all formating</a></li>
+<li><a href="#org2d9505b">8.4.10. Spreadsheet tools - Conditional formating</a></li>
+<li><a href="#orgccef712">8.4.11. Spreadsheet tools - Split text to columns</a></li>
+<li><a href="#org3f015ec">8.4.12. Spreadsheet tools - Data Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfd6f0de">9. SQL</a>
+<ul>
+<li><a href="#orgc598293">9.1. SQL premade querys</a>
+<ul>
+<li><a href="#orgb3782b7">9.1.1. SQL premade querys - Count duplicate</a></li>
+<li><a href="#org6aac56d">9.1.2. SQL premade querys - Return NULL</a></li>
+<li><a href="#orgba2c54d">9.1.3. SQl premade querys - Numeric filtering base on value range</a></li>
+<li><a href="#org9f8647f">9.1.4. SQl premade querys - String filtering base on string lenght</a></li>
+<li><a href="#orgc44bd8b">9.1.5. SQL premade querys - Find and replace</a></li>
+</ul>
+</li>
+<li><a href="#orgf0b09e7">9.2. SQL statements</a>
+<ul>
+<li><a href="#org6061294">9.2.1. SQL statements - DISTINCT</a></li>
+<li><a href="#org2ee4d87">9.2.2. SQL statements - INSERT</a></li>
+<li><a href="#org2abebf2">9.2.3. SQL statements - UPDATE</a></li>
+</ul>
+</li>
+<li><a href="#orge7bb788">9.3. SQL functions</a>
+<ul>
+<li><a href="#org887e66c">9.3.1. SQL functions - NULL</a>
+<ul>
+<li><a href="#org186f6bc">9.3.1.1. SQL functions - ISNULL</a></li>
+<li><a href="#orga623520">9.3.1.2. SQL functions - IFNULL</a></li>
+</ul>
+</li>
+<li><a href="#org49a7f30">9.3.2. SQL functions - TRIM</a></li>
+</ul>
+</li>
+<li><a href="#org2084b9b">9.4. SQL expression</a>
+<ul>
+<li><a href="#orgf608a8d">9.4.1. SQL expression - CASE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd1e1ccf">10. Share data through the art of visualization</a>
+<ul>
+<li><a href="#orgabc9b74">10.1. Visualizing data</a></li>
+<li><a href="#orgd75616f">10.2. creatign data visualization with tableau</a></li>
+<li><a href="#org46f1758">10.3. creatign data stories</a></li>
+<li><a href="#orgdf6f96c">10.4. developing presentations and slideshows</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SB2K68EVD6');
+</script>
+
+<div class="hheader">
+<a href="https://josephelhaddad.github.io/" class="bb"><img src="img/home.svg" alt="*"></a></div>
+<div class="hbot">
+<a href="#content" class="bb"><img src="img/top-arrow.svg" alt="*"></a></div>
+
+<div id="outline-container-org228d618" class="outline-2">
+<h2 id="org228d618"><span class="section-number-2">1.</span> data analysis</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Data analysis is the use of a data ecosystem to draw conclusions or make decision.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgb4c76a1" class="outline-3">
+<h3 id="orgb4c76a1"><span class="section-number-3">1.1.</span> Data ecosystem</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Data ecosystem are elements that interact with each other to collect, transform, store, organize, analyze, and share data.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53061a9" class="outline-3">
+<h3 id="org53061a9"><span class="section-number-3">1.2.</span> Data analysis process</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Ask: You will ask questions to gather data through a survey or to inquire from stakeholders or colleagues.<br />
+<ul class="org-ul">
+<li>Questions need to be prepared and written beforehand, with good grammar and formality.<br />
+<ul class="org-ul">
+<li>good questions to ask are:<br />
+<ul class="org-ul">
+<li>Clear, simple, and focus on a single topic<br /></li>
+<li>Mesurable and can be assessed<br /></li>
+<li>Encourage a change<br /></li>
+<li>Time bound<br /></li>
+</ul></li>
+<li>Bad questions to ask are:<br />
+<ul class="org-ul">
+<li>leading questions ("how many people will you recommend this event to?")<br /></li>
+<li>Close ended questions ("Will you reccomend this event to someone?")<br /></li>
+<li>Vague questions ("Did you like that band?")<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Prepare: collecting and storing the data.<br /></li>
+<li>Process: Clean the data<br /></li>
+<li>Analyze: Using tools to transform and organize the data to draw conclusion.<br /></li>
+<li>Share: Share result with others to make decisions with visuals.<br /></li>
+<li>Act: Stakeholder takes a data driven decision-making based on your result.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org74b9d37" class="outline-3">
+<h3 id="org74b9d37"><span class="section-number-3">1.3.</span> Data analysis tools:</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><a href="#org88c36e8">Spreadsheet</a><br /></li>
+<li>query language<br /></li>
+<li>data visualization and story telling with data<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org90a71bd" class="outline-3">
+<h3 id="org90a71bd"><span class="section-number-3">1.4.</span> what can we get after analysing data</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Insight generated with data can be<br />
+<ul class="org-ul">
+<li>Descriptive : answering "What happend?"<br /></li>
+<li>Diagnostic : answering "Why did it happend?"<br /></li>
+<li>Predictive : answering "What will happend?"<br /></li>
+<li>Prescriptive : answering "How can we make it happend?"<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf5a2bbb" class="outline-3">
+<h3 id="orgf5a2bbb"><span class="section-number-3">1.5.</span> common problems type:</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Making predictions: Taking actions based on data-driven predictions<br />
+<ul class="org-ul">
+<li>Finding patterns: using historical timestamp data to find repeating pattern and make predictions.<br /></li>
+</ul></li>
+<li>Categorizing things: grouping things with common features together<br />
+<ul class="org-ul">
+<li>Identifying themes: categorizing things in a broader concept.<br /></li>
+</ul></li>
+<li>Spotting something unusual: identifying outliers in the data.<br /></li>
+<li>Discovering connections: find the activities with problems that affect the activity that we have analyzed.("why?" questions)<br /></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8712e0f" class="outline-2">
+<h2 id="org8712e0f"><span class="section-number-2">2.</span> Data analyst</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Data analyst is someone who uses data analysis and its processes.<br />
+<ol class="org-ol">
+<li>Skills that data analyst must have:<br />
+<ul class="org-ul">
+<li>Curiosity: wanting new knowledge<br /></li>
+<li>Understanding context: being able to group elements or identify a pattern.<br /></li>
+<li>Having a technical mindset: breaking a problem into pieces to solve each piece logically in order.<br /></li>
+<li>Data design: organizing data to make it easier to retrieve.<br /></li>
+<li>Data strategy: the management of people, processes, and tools used in data analysis.<br />
+<ul class="org-ul">
+<li>Managing people by making sure they know how to use the right data to solve the problem.<br /></li>
+<li>Managing processes by making sure the path to that solution is clear.<br /></li>
+<li>Managing tool by making sure the right technology is being used for the job.<br /></li>
+</ul></li>
+</ul></li>
+<li>Analytical/Structered thinking: identifying a problem and solving it using data.<br />
+<ul class="org-ul">
+<li>Visualization: graphical representation of information can help identify the problem quickly.<br /></li>
+<li>Strategy: determining what you want to achieve with the data.<br /></li>
+<li>Problem orientation: identify, describe, and solve a problem.<br /></li>
+<li>Correlation: identifying correlation between two and more pieces of data.<br /></li>
+<li>Big picture: being able to see the overall problem, similar to keep asking "why?" concept<br /></li>
+<li>Detail oriented: figuring out all the specifics that will help you execute a plan<br /></li>
+</ul></li>
+<li>Mathematical thinking is achieved by using metric value to make a decision.<br /></li>
+<li>Questions to ask<br />
+<ul class="org-ul">
+<li>Keep asking "why?" until you find the root cause of a problem.<br /></li>
+<li>Is there any gap in the processes? By performing gap analysis,<br /></li>
+<li>What didn't we consider before?<br /></li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7770bfa" class="outline-2">
+<h2 id="org7770bfa"><span class="section-number-2">3.</span> Data science</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Data science is a broad term that encompasses three distinct roles based on the number of decisions that must be made.<br />
+<ul class="org-ul">
+<li>If you need to make a few decisions, your role is of a statistician, making decision base on statistics.<br /></li>
+<li>If you need to make many decisions, your role is of an AI engineer, making an automation system with good accuracy.<br /></li>
+<li>If you don't know how many decisions you need to take, your role is of an analyst, exploring the data and draw conclusions.<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga35589c" class="outline-2">
+<h2 id="orga35589c"><span class="section-number-2">4.</span> Data</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org2b4af1e" class="outline-3">
+<h3 id="org2b4af1e"><span class="section-number-3">4.1.</span> What is data?</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Data is a collection of datum<br />
+Datum is a value that convey information<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org3a6e1ae" class="outline-3">
+<h3 id="org3a6e1ae"><span class="section-number-3">4.2.</span> Data types</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Each data type have some instruction or rules about what you can and cannot do with the data<br />
+</p>
+</div>
+<div id="outline-container-org0408f0d" class="outline-4">
+<h4 id="org0408f0d"><span class="section-number-4">4.2.1.</span> Data types in statistics</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ul class="org-ul">
+<li>Qualitative or categorical data are descriptive information<br />
+<ul class="org-ul">
+<li>Nominal data: Data with no order<br />
+<ul class="org-ul">
+<li>Example: Do you read books? (Yes, No)<br /></li>
+</ul></li>
+<li>Ordinal data: Data with order<br />
+<ul class="org-ul">
+<li>Example: How frequently do you read books? (Never, Sometimes, Always)<br /></li>
+</ul></li>
+</ul></li>
+<li>Quantitative or numerical data are numerical information<br />
+<ul class="org-ul">
+<li>Discrete data: Data gotten by counting<br />
+<ul class="org-ul">
+<li>Example: The number of cups in a table.<br /></li>
+</ul></li>
+<li>Continuous data: Data gotten by measuring<br />
+<ul class="org-ul">
+<li>Example: The amount of liquid in a cup<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org95e1fc9" class="outline-4">
+<h4 id="org95e1fc9"><span class="section-number-4">4.2.2.</span> Data types in computer science</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ul class="org-ul">
+<li>Boolean: data type that have one of two possible value, True or False<br /></li>
+<li>Char: datum that represent a single charachter<br /></li>
+<li>String: sequance of char<br /></li>
+<li>Int: data type that represent a whole number<br /></li>
+<li>Float: data type that represent a fractural number<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2890534" class="outline-3">
+<h3 id="org2890534"><span class="section-number-3">4.3.</span> Bias and data</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Bias is a preference in favor for or against an idea or a thing.<br /></li>
+<li>Bias can occur during while collecting or analysing data, here are some biases in data:<br />
+<ul class="org-ul">
+<li>Sample bias: when a sample isen't representative of the population<br /></li>
+<li>Observer/ experimenter/ research bias: The tendency for diffirent people to observe things dififrently (dependint on the sentitivity of the device used for mesur)<br /></li>
+<li>Interpretation bias: The tendency to always interpret unclear situations in a positive or negative way.<br /></li>
+<li>Confirmation bias: The tendency to search for or interpret information in a way that confirms pre-existing beliefs.<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaaedd7b" class="outline-3">
+<h3 id="orgaaedd7b"><span class="section-number-3">4.4.</span> How to get data</h3>
+<div class="outline-text-3" id="text-4-4">
+</div>
+<div id="outline-container-orgf1f066b" class="outline-4">
+<h4 id="orgf1f066b"><span class="section-number-4">4.4.1.</span> Collect it yourself</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<ul class="org-ul">
+<li>Data can be collected by:<br />
+<ul class="org-ul">
+<li>Interview<br /></li>
+<li>Observation (commong amoung scientist)<br /></li>
+<li>Form<br /></li>
+<li>Questionnaires<br /></li>
+<li>Survey<br /></li>
+<li>Cookies<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org11054c4" class="outline-5">
+<h5 id="org11054c4"><span class="section-number-5">4.4.1.1.</span> Data ethics and privacy</h5>
+<div class="outline-text-5" id="text-4-4-1-1">
+<ul class="org-ul">
+<li>Data ethics are well standers of right and wrong that dictate how data is collected, shared, and used. (example: GDPR)<br /></li>
+<li>Aspects of data ethics:<br />
+<ul class="org-ul">
+<li>Ownership: data ownership dosent go to the people who collected it, but to the individuals who provide the raw data to be collected.<br /></li>
+<li>Transaction transperency: the algorithm that process the data should be explained by the individuals who provide their data.<br /></li>
+<li>Consent: An indivvisual right to know how and why the data is collected before agreeing to provide it.<br /></li>
+<li>Currency: individuals should be aware of money generated from the use of their data<br /></li>
+<li>Privacy: Preserving a data subjects information and activity any time a data transaction occurs<br /></li>
+<li>Openness: free access, usage, sharing of data after anonymization people identity, it is mostly used in medical indestry<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeeb4ae5" class="outline-4">
+<h4 id="orgeeb4ae5"><span class="section-number-4">4.4.2.</span> Pre collected data</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<ul class="org-ul">
+<li>pre-collected data can come as:<br />
+<ul class="org-ul">
+<li>First party data: data collected by an individual or a group using their own resources<br /></li>
+<li>Second party data: data collected by a group directly from its audience and then sold.<br /></li>
+<li>Third party data: data collected from outside sources who did not collect it directly<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org2a52f20" class="outline-5">
+<h5 id="org2a52f20"><span class="section-number-5">4.4.2.1.</span> Where is the data stored</h5>
+<div class="outline-text-5" id="text-4-4-2-1">
+<ul class="org-ul">
+<li>Internal data: a data that lives within a company's own system<br /></li>
+<li>External data: a data that lives and generated outside an organization.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34c721a" class="outline-5">
+<h5 id="org34c721a"><span class="section-number-5">4.4.2.2.</span> data credibility</h5>
+<div class="outline-text-5" id="text-4-4-2-2">
+<ul class="org-ul">
+<li>what is a credible data:<br />
+<ul class="org-ul">
+<li>Reliable: accurate, complete and unbias information<br /></li>
+<li>Original: check if data is from an original source<br /></li>
+<li>Comperhansive: data need to contain all critical information needed to answer a question of find a solution<br /></li>
+<li>Current: updated data<br /></li>
+<li>Cited: is  the source of data cridable<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a9ea3e" class="outline-5">
+<h5 id="org7a9ea3e"><span class="section-number-5">4.4.2.3.</span> meta data</h5>
+<div class="outline-text-5" id="text-4-4-2-3">
+<ul class="org-ul">
+<li>Metadata: is data about data<br /></li>
+<li>there are three stype of metadata:<br />
+<ul class="org-ul">
+<li>Descriptive: Metadata that describe a piece of data and can be used to identify it at a later point in time (a book ISBN).<br /></li>
+<li>Structural: Metadata that indicat how a piece of data is orginized and whether it is part of one, or more than one, data collection (a book table of content).<br /></li>
+<li>Administrative: Metadata that indicate the technical source of a digital asset<br /></li>
+</ul></li>
+<li>Metadata repository is a database that store metadata<br />
+<ul class="org-ul">
+<li>Data governance: A process to ensure the formal managment of a company's data assets<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb2adffb" class="outline-3">
+<h3 id="orgb2adffb"><span class="section-number-3">4.5.</span> How data are put together</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-orgd80e613" class="outline-4">
+<h4 id="orgd80e613"><span class="section-number-4">4.5.1.</span> Unstructure data</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li>Unstructured data is data that is not organize in any easily identifiable manner (audio and video file)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4877de0" class="outline-4">
+<h4 id="org4877de0"><span class="section-number-4">4.5.2.</span> Structured data</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ul class="org-ul">
+<li>Structured data is data that is organize in rows and columns such as databases or <a href="#org88c36e8">8</a><br /></li>
+</ul>
+</div>
+<div id="outline-container-org0b88b58" class="outline-5">
+<h5 id="org0b88b58"><span class="section-number-5">4.5.2.1.</span> Diffirence between Spreadsheet and SQL</h5>
+<div class="outline-text-5" id="text-4-5-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Spreadsheet</th>
+<th scope="col" class="org-left">SQL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Generated with a program</td>
+<td class="org-left">A language use to interact with a database program</td>
+</tr>
+
+<tr>
+<td class="org-left">Access to data you input</td>
+<td class="org-left">cal pul information from diffirent sources in the dataset</td>
+</tr>
+
+<tr>
+<td class="org-left">Stored locally</td>
+<td class="org-left">Stored across a database</td>
+</tr>
+
+<tr>
+<td class="org-left">Small datasets</td>
+<td class="org-left">Large datasets</td>
+</tr>
+
+<tr>
+<td class="org-left">working independently</td>
+<td class="org-left">track changes ccross team</td>
+</tr>
+
+<tr>
+<td class="org-left">built-in functionallity</td>
+<td class="org-left">useful accross multiple programs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org39f5e5e" class="outline-5">
+<h5 id="org39f5e5e"><span class="section-number-5">4.5.2.2.</span> Database</h5>
+<div class="outline-text-5" id="text-4-5-2-2">
+<ul class="org-ul">
+<li>Database is a collection of data stored in a computer system, it can be used in data model<br /></li>
+<li>Data model: A model that is used for orginizing data elements and how they relate to one another (SQL PK and FK)<br />
+<ul class="org-ul">
+<li>Primary key: an indentifier that references a column in which each value is unique<br /></li>
+<li>Foreign key: a field within a table that is a primary key in another table<br /></li>
+</ul></li>
+<li><p>
+Databases can be analyse using SQL, here is a basic structure of sql:<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> a_columns #2
+<span style="color: #531ab6;">FROM</span> a_database #1
+<span style="color: #531ab6;">WHERE</span> a_value_bigger_than_100 #3
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb17376" class="outline-5">
+<h5 id="orgdb17376"><span class="section-number-5">4.5.2.3.</span> Structural data table type:</h5>
+<div class="outline-text-5" id="text-4-5-2-3">
+<ul class="org-ul">
+<li><p>
+Wide data: Data in which every data subject has a single row with multiple columns to hold the values of various attribute of the subject.<br />
+Amount sold table<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Product</th>
+<th scope="col" class="org-right">2019</th>
+<th scope="col" class="org-right">2020</th>
+<th scope="col" class="org-right">2021</th>
+<th scope="col" class="org-right">2022</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">130</td>
+<td class="org-right">160</td>
+<td class="org-right">177</td>
+<td class="org-right">140</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+Long date: Data in which each row in one time point per subject, so each subject will have data in multiple rows.<br />
+Amount sold table<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Product</th>
+<th scope="col" class="org-right">Year</th>
+<th scope="col" class="org-right">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">2019</td>
+<td class="org-right">130</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">2020</td>
+<td class="org-right">160</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">2021</td>
+<td class="org-right">177</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">2022</td>
+<td class="org-right">140</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf076ee4" class="outline-3">
+<h3 id="orgf076ee4"><span class="section-number-3">4.6.</span> Data size in analysis:</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>Population: all posible data values in a certain dataset<br /></li>
+<li>Sample: a part of a population that is representative of the population<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb5e9f6" class="outline-3">
+<h3 id="orgfb5e9f6"><span class="section-number-3">4.7.</span> Best practices when orginizing datasets and storing</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>naming convention: consistent guidelines that describe the content, date, or version of the file in its name<br />
+<ul class="org-ul">
+<li>Format date: yyyy-mm-dd (SalesReport20201125)<br /></li>
+<li>Lead version number with zero: SalesReport20201125v02<br /></li>
+<li>Usehyphens, capital letters, underscore instead of space: Sales_Report-2020-11-25_v02<br /></li>
+</ul></li>
+<li>foldering<br /></li>
+<li>archiving older files<br /></li>
+<li>Securing data in spreadsheet<br />
+<ul class="org-ul">
+<li>protecting modification of viwing of the data by unauthorise access<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge8385c1" class="outline-3">
+<h3 id="orge8385c1"><span class="section-number-3">4.8.</span> big querry</h3>
+<div class="outline-text-3" id="text-4-8">
+<ul class="org-ul">
+<li>Working with large data in sql with bigquerry<br />
+<ul class="org-ul">
+<li>Bigquery with sandbox account is free<br /></li>
+<li>Go to <a href="https://cloud.google.com/bigquery/docs/sandbox">https://cloud.google.com/bigquery/docs/sandbox</a><br /></li>
+<li>Click on get started for free<br /></li>
+<li>Click on create project<br /></li>
+<li>how t owork with bigquery<br /></li>
+<li>Click on the menu button<br /></li>
+<li>scroll down to Bigquery =&gt; SQL workspace<br /></li>
+<li>Click Add data<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge29ae64" class="outline-2">
+<h2 id="orge29ae64"><span class="section-number-2">5.</span> dictionary</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Metric is a value used for measurement, it can be calculated by appliying mathematical operation on data.<br />
+<ul class="org-ul">
+<li>example: Return on investment. (Revenue-Cost)/Cost<br /></li>
+</ul></li>
+
+<li>Skope of work (SOK) an agred-upon outline of the work your are going to preform on a project<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgccf3e72" class="outline-2">
+<h2 id="orgccf3e72"><span class="section-number-2">6.</span> Process data</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org0abe5d3" class="outline-3">
+<h3 id="org0abe5d3"><span class="section-number-3">6.1.</span> Importance of integrity</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>why data integrity is important<br />
+<ul class="org-ul">
+<li>Data integrity refers to the accuracy and consistency of the data throughout its life cycle.<br /></li>
+<li>Data integrity can be compromised by:<br />
+<ul class="org-ul">
+<li>Data replication: storing data in multiple location<br /></li>
+<li>Data transfer: copying data from storege device to memory or from one computer to another<br /></li>
+<li>Data manipulation: changing data to make it more orginized and easier to read<br /></li>
+<li>hummang error<br /></li>
+<li>viruses<br /></li>
+<li>malware<br /></li>
+<li>hacking<br /></li>
+<li>system failures<br /></li>
+</ul></li>
+</ul></li>
+<li>incefissiont data<br />
+<ul class="org-ul">
+<li>Sometimes the data in hand doesn't give enough information to solve the problem.<br /></li>
+<li>types of insufficient data and hw to deal with it<br />
+<ul class="org-ul">
+<li>if the data from only once source, look for new data<br /></li>
+<li>data that keeps updating, wait or adjust objective (alanyse trend weekly instead of monthly) or wait<br /></li>
+<li>outdated data, find new updated data<br /></li>
+<li>geographicly /group limited data , use unbias data<br /></li>
+</ul></li>
+</ul></li>
+<li>Testing your data<br />
+<ul class="org-ul">
+<li>statistical terms<br />
+<ul class="org-ul">
+<li>statistical power: the probability of getting meaningful result from a test, statistically sugnificant<br /></li>
+<li>statistically significant mean that the result of the test are not an error caused by randopmness<br /></li>
+<li>hypothesis testing: a way to see if a servey of experiment have a meaningful result<br /></li>
+</ul></li>
+<li>statistical variables<br />
+<ul class="org-ul">
+<li>\(CI\): Confidance level is the probabilty that your sample size accuratly reflects the greater population, bust it get turned into z-score<br />
+<ul class="org-ul">
+<li>confidence level of 0.95 is 1.95 z-score,<br /></li>
+</ul></li>
+<li>\(\epsilon\): Margin of error is how close your sapmple result are to what your result would be if you use the entire population<br /></li>
+<li>\(p\): Population proportion is the population is a binary (meaning we are intrested in people answering yes or no) whar is the percenteg of people answered in one answer, 0.5 for the max number of sample size<br /></li>
+<li>\(N\):Population size the population size<br /></li>
+<li>\(n\): sample size<br /></li>
+</ul></li>
+<li>determining the best sample size<br />
+<ul class="org-ul">
+<li>without population \(N\):<br />
+<ul class="org-ul">
+<li>\(n=\cfrac{z^2p(1-p)}{\epsilon^2}\)<br /></li>
+</ul></li>
+<li>with population \(N\)<br />
+<ul class="org-ul">
+<li>\(n=\cfrac{\cfrac{z^2p(1-p)}{\epsilon^2}}{\cfrac{1+z^2p(1-p)}{\epsilon^2*N}}\) <br /></li>
+</ul></li>
+</ul></li>
+<li>determining margin of error<br />
+<ul class="org-ul">
+<li>without population \(N\)<br />
+<ul class="org-ul">
+<li>\(\epsilon=\cfrac{z\sqrt{p(1-p)}}{\sqrt{n}}\)<br /></li>
+</ul></li>
+<li>with population \(N\)<br />
+<ul class="org-ul">
+<li>\(\epsilon=\cfrac{z\sqrt{p(1-p)}}{\cfrac{n(N-1)}{(N-n)}}\)<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9a8b94a" class="outline-3">
+<h3 id="org9a8b94a"><span class="section-number-3">6.2.</span> sparkling clean data</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Before startning your analysis, your data should be complete, correct, and relevent to the problem you are trying to solve. or else you will be making decisions with the wrong expectations<br /></li>
+<li>Before cleaning your data, always make a duplicate<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org7802d76" class="outline-4">
+<h4 id="org7802d76"><span class="section-number-4">6.2.1.</span> do you need to always clean data</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<ul class="org-ul">
+<li>If the data is handed to you by a data engineer or data warehouse specialist, there is no need to clean the data.<br />
+<ul class="org-ul">
+<li>data enginners transform the data into a useful format for analysis and give it a reliable infrastructure<br /></li>
+<li>data warehousing specialist develop processes and procedures to effectively store and organize data<br /></li>
+</ul></li>
+<li>Before merging databases from multiple sources, we need to check for compatibility, meaning whether the same set of data is represented in a uniform format.<br />
+<ul class="org-ul">
+<li>If compatibility is not found, we need Data mapping, which is the process of matching fields from one data source to another.<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org38e3f48" class="outline-4">
+<h4 id="org38e3f48"><span class="section-number-4">6.2.2.</span> What are the types of data that need to be cleaned?</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<ul class="org-ul">
+<li>Duplicate data (data that show up more than once)<br /></li>
+<li>Incomplete data (data that is missing fields)<br /></li>
+<li>Inaccurate data (data that had errors during input)<br /></li>
+<li>Inconsistent data (data that uses diffirent formats to represent the same thing)<br /></li>
+<li>Outdated data (data that is old and can or should be replaces)<br /></li>
+<li>Inconsistent formating in spreadsheet (data that have multiple sizes, fonts, colors that make it hard to read)<br /></li>
+</ul>
+</div>
+<div id="outline-container-org5ff0946" class="outline-5">
+<h5 id="org5ff0946"><span class="section-number-5">6.2.2.1.</span> duplicate data</h5>
+<div class="outline-text-5" id="text-6-2-2-1">
+<ul class="org-ul">
+<li>Determining<br />
+<ul class="org-ul">
+<li><a href="#org2620754">Spreadhseet functions - Count duplicate</a><br /></li>
+<li><a href="#orgb3782b7">SQL premade querys - Count duplicate</a><br /></li>
+</ul></li>
+<li>Solution<br />
+<ul class="org-ul">
+<li><a href="#org777661c">Spreadsheet tools - Remove duplicate</a><br /></li>
+<li><a href="#org6061294">SQL statements - DISTINCT</a><br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0d868b2" class="outline-5">
+<h5 id="org0d868b2"><span class="section-number-5">6.2.2.2.</span> Incomplete data</h5>
+<div class="outline-text-5" id="text-6-2-2-2">
+<ul class="org-ul">
+<li>Determining<br />
+<ul class="org-ul">
+<li><a href="#org837e299">Spreadsheet functions - COUNTA</a><br /></li>
+<li><a href="#org84d6a97">Spreadsheet functions - ISBLANK</a><br /></li>
+<li><a href="#org6aac56d">SQL premade querys - Return NULL</a><br /></li>
+</ul></li>
+<li>Solution<br />
+<ul class="org-ul">
+<li>Spreasheet manual insert<br /></li>
+<li><a href="#org2ee4d87">SQL statements - INSERT</a><br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org01b3009" class="outline-5">
+<h5 id="org01b3009"><span class="section-number-5">6.2.2.3.</span> Innacurate data</h5>
+<div class="outline-text-5" id="text-6-2-2-3">
+<ul class="org-ul">
+<li>Inaccurate data, types of errors<br />
+<ul class="org-ul">
+<li>misspelling words and extra non printable characters<br /></li>
+<li>error in string range<br /></li>
+<li>error in number range<br /></li>
+</ul></li>
+<li>Determining<br />
+<ul class="org-ul">
+<li>Spreadsheet<br />
+<ul class="org-ul">
+<li>Missspelling and the presence non printable characters can be chacked using summorizing tool like <a href="#org2800188">Spreadsheet tools - Pivot table</a><br /></li>
+<li>Error in string range <a href="#org98a6259">Spreadsheet functions - LEN</a><br /></li>
+<li>Error in number range <a href="#org4def2f9">Spreadsheet functions - COUNTIF</a><br /></li>
+<li>Visualize (dustribution or box plot)<br /></li>
+</ul></li>
+<li>SQL<br />
+<ul class="org-ul">
+<li>Missspelling and the presence non printable characters can be chacked using summorizing tool like pivot table<br /></li>
+<li>Error in number range <a href="#orgba2c54d">SQl premade querys - Numeric filtering base on value range</a><br /></li>
+<li>Error in string range <a href="#org9f8647f">SQl premade querys - String filtering base on string lenght</a><br /></li>
+</ul></li>
+</ul></li>
+<li>Solution<br />
+<ul class="org-ul">
+<li>Spreadhseet<br />
+<ul class="org-ul">
+<li><a href="#org64c8f9e">Spreadsheet tools - Spell check</a><br /></li>
+<li><a href="#org0e3dddb">Spreadsheet tools - Find and replace</a><br /></li>
+<li><a href="#org6e30734">Spreadsheet functions - TRIM</a><br /></li>
+</ul></li>
+<li>SQL<br />
+<ul class="org-ul">
+<li><a href="#orgc44bd8b">SQL premade querys - Find and replace</a><br /></li>
+<li><a href="#org49a7f30">SQL functions - TRIM</a><br /></li>
+<li><a href="#org2abebf2">SQL statements - UPDATE</a><br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7546a5d" class="outline-5">
+<h5 id="org7546a5d"><span class="section-number-5">6.2.2.4.</span> Inconsistant data</h5>
+<div class="outline-text-5" id="text-6-2-2-4">
+<ul class="org-ul">
+<li>Determining<br />
+<ul class="org-ul">
+<li>spreadsheeet<br />
+<ul class="org-ul">
+<li><a href="#org8f33b7f">Spreadsheet functions - ISNUMBER</a><br /></li>
+<li><a href="#orgc641a26">Spreadsheet functions - ISTEXT</a><br /></li>
+<li><a href="#org08e0193">Spreadsheet functions - ISLOGICAL</a><br /></li>
+<li><a href="#orgedcc348">Spreadsheet functions - ISDATE</a><br /></li>
+<li><a href="#org0c90f34">Spreadsheet functions - ISEMAIL</a><br /></li>
+</ul></li>
+<li>SQL<br />
+<ul class="org-ul">
+<li>ISNUMERIC()&#x2026;<br /></li>
+</ul></li>
+</ul></li>
+<li>Solution<br />
+<ul class="org-ul">
+<li>Spreadsheet<br />
+<ul class="org-ul">
+<li><a href="#orgfeac15e">Spreadsheet tools - Format number</a><br /></li>
+</ul></li>
+<li>sql<br />
+<ul class="org-ul">
+<li><p>
+CAST() can be used to convert anything from a data type to another, this process is called typecasting.<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">CAST</span>(column1 <span style="color: #531ab6;">as</span> <span style="color: #005f5f;">FLOAT</span>)
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+<span style="color: #531ab6;">ORDER</span> <span style="color: #531ab6;">BY</span> <span style="color: #8f0075;">CAST</span>(column1 <span style="color: #531ab6;">as</span> <span style="color: #005f5f;">FLOAT</span>) <span style="color: #531ab6;">DESC</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">CAST</span>(date_col <span style="color: #531ab6;">as</span> <span style="color: #005f5f;">date</span>) <span style="color: #531ab6;">as</span> date_only
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+<span style="color: #531ab6;">WHERE</span> date_only <span style="color: #531ab6;">BETWEEN</span> "2020-12-01" <span style="color: #531ab6;">AND</span> "2020-12-07"
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5b4e7b6" class="outline-5">
+<h5 id="org5b4e7b6"><span class="section-number-5">6.2.2.5.</span> Outdated data</h5>
+<div class="outline-text-5" id="text-6-2-2-5">
+<ul class="org-ul">
+<li>Determinig by observation<br /></li>
+<li>Solution is to talk with subject matter expert or stakeholders<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c1fa54" class="outline-5">
+<h5 id="org3c1fa54"><span class="section-number-5">6.2.2.6.</span> Inconsistent formating in spreadsheet</h5>
+<div class="outline-text-5" id="text-6-2-2-6">
+<ul class="org-ul">
+<li>Determined by observation<br /></li>
+<li>Solution<br />
+<ul class="org-ul">
+<li><a href="#orge75df47">Spreadsheet tools - Clear all formating</a><br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc342f50" class="outline-4">
+<h4 id="orgc342f50"><span class="section-number-4">6.2.3.</span> manipulate the data</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<ul class="org-ul">
+<li>SQL<br />
+<ul class="org-ul">
+<li><p>
+COALESCE() can be used to return non-null values in a list, if it is given two columns, it will return all values in first columns and replace the nulls frmo columns1 with the adjacent values in column2<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">COALESCE</span>(column1,column2) <span style="color: #531ab6;">as</span> coalesce_col
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+</pre>
+</div></li>
+
+<li><p>
+SUBSTR return a portion of the string giving a columns, a start point, and how much to extract<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> column_id
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+<span style="color: #531ab6;">WHERE</span> SUBSTR(column1,1,2)            
+</pre>
+</div></li>
+<li><p>
+CONCAT() add strings togetherto create new text string<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> CONCAT(column1,column2) <span style="color: #531ab6;">as</span> con_col
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6129fc5" class="outline-4">
+<h4 id="org6129fc5"><span class="section-number-4">6.2.4.</span> verify and report on your clraning</h4>
+<div class="outline-text-4" id="text-6-2-4">
+<ul class="org-ul">
+<li>The cleaning steps should be logged for your colleagues or stakeholders and subject-matter experts.<br />
+<ul class="org-ul">
+<li>Reporting the cleaning steps for your colleagues:<br />
+<ul class="org-ul">
+<li>The database program or the spreadsheet keeps a changelog.<br /></li>
+</ul></li>
+<li>Reporting the cleaning steps ofr your stakeholders and subject-matter experts:<br />
+<ul class="org-ul">
+<li>Steps need to be documented manually and shared in a document file.<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3ca0893" class="outline-2">
+<h2 id="org3ca0893"><span class="section-number-2">7.</span> Analyze to answer questions</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org7bd848e" class="outline-3">
+<h3 id="org7bd848e"><span class="section-number-3">7.1.</span> Orginizing data to bigen analysis</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>the analysis process<br /></li>
+<li>analysis is the process used to make sense of the data collected, it hase four phases:<br />
+<ul class="org-ul">
+<li>Orginize data (sorting)<br /></li>
+<li>format and adjust data<br /></li>
+<li>get input from others<br /></li>
+<li>transofrm the data<br /></li>
+</ul></li>
+<li>before analyzing data, use data model to have an overview on what columns are needed acrose multiple data tables for the analysis<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7f7d5d8" class="outline-3">
+<h3 id="org7f7d5d8"><span class="section-number-3">7.2.</span> Orginize data for analysis</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>Sorting in spreadsheet:<br />
+<ul class="org-ul">
+<li><a href="#org3e5083a">Spreadsheet tools - Sort</a><br /></li>
+<li><a href="#org195b9b8">Spreadsheet functions - SORT</a><br /></li>
+</ul></li>
+<li>Sort in SQL<br />
+<ul class="org-ul">
+<li>ORDER BY column_name DESC<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org48ded0d" class="outline-3">
+<h3 id="org48ded0d"><span class="section-number-3">7.3.</span> Formating and adjusting data</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li><a href="#orgb2f0521">Spreadsheet functions - CONCATENATE</a><br /></li>
+<li><a href="#orgc1eacf9">Spreadsheet functions - CONVERT</a><br /></li>
+<li><a href="#orgefb9587">Spreadsheet functions - LEFT</a><br /></li>
+<li><a href="#org9c76193">Spreadsheet functions - MID</a><br /></li>
+<li><a href="#org580fe04">Spreadsheet functions - RIGHT</a><br /></li>
+<li><a href="#org572dea8">Spreadsheet functions - VALUE</a><br /></li>
+<li><a href="#org2d9505b">Spreadsheet tools - Conditional formating</a><br /></li>
+<li><a href="#org3f015ec">Spreadsheet tools - Data Validation</a><br /></li>
+<li><a href="#orgfeac15e">Spreadsheet tools - Format number</a><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org730588c" class="outline-3">
+<h3 id="org730588c"><span class="section-number-3">7.4.</span> Get support during analysis</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>ask your team members for help if you are stuck<br /></li>
+<li>best practices to search online<br />
+<ul class="org-ul">
+<li>thinking skills<br />
+<ul class="org-ul">
+<li>Mental model: your thought process and the way you approach a problem.<br /></li>
+</ul></li>
+<li>data analytics terms<br />
+<ul class="org-ul">
+<li>leaning how to search for problems with the same language that all analytics use will help you find soulution<br /></li>
+</ul></li>
+<li>basic knowledge<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6563489" class="outline-3">
+<h3 id="org6563489"><span class="section-number-3">7.5.</span> transform and Aggregating data for analysis</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>aggregation means collecting or gathering many separate peices of information as a whole.<br /></li>
+<li>Data aaggrigation help data analyst to indentify trend, make comparisons, gain insights<br /></li>
+<li>data aggregation is the process of gathering data from multiple sources inorder to combine it into a single summarized collection.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org0793aae" class="outline-4">
+<h4 id="org0793aae"><span class="section-number-4">7.5.1.</span> data gathering:</h4>
+<div class="outline-text-4" id="text-7-5-1">
+<ul class="org-ul">
+<li><a href="#org32a50dd">Spreadsheet functions - VLOOKUP</a><br /></li>
+<li>Use join to aggregate data in SQL<br />
+<ul class="org-ul">
+<li>JOIN adds information about a foreign key, from the right table where it is a primary key, to a row.<br /></li>
+<li>JOINs type<br />
+<ul class="org-ul">
+<li>Inner: Returns only rows of the left table if the foreign key exist in right table as a primary key.<br /></li>
+<li>Left and Right: Returns all rows from the left<br />
+<ul class="org-ul">
+<li>if a foreign key in the left table is found in the right table as a primary key, it adds its information to the row,<br /></li>
+<li>if a foreign key in the left table is not found in the right table as a primary key, it adds its nulls to the row,<br /></li>
+</ul></li>
+<li>Outer: Returns all rows from the left table and the right table<br />
+<ul class="org-ul">
+<li>if a foreign key in the left table is found in the right table as a primary key, it adds its information to the row.<br /></li>
+<li>if a foreign key in the left table is not found in the right table as a primary key, it adds its nulls to the row.<br /></li>
+<li>if a primary key in the right table is not found in the left table as a foreign key, it adds its nulls to the row.<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Working with subquereys<br />
+<ul class="org-ul">
+<li>a query inside a subquery<br /></li>
+<li>the subquery or the inner query execure first<br /></li>
+<li>Having allow you to add filter to your queery<br /></li>
+<li>CASE akoows you to use if statment<br /></li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>Aliasing is naming a table or columns to be easiyer to refrence<br /></li>
+<li>Count : returns the number of rows in a range<br /></li>
+<li>Count distinc: retunrs the unique values in a range<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc89d27b" class="outline-4">
+<h4 id="orgc89d27b"><span class="section-number-4">7.5.2.</span> Performing data calculation</h4>
+<div class="outline-text-4" id="text-7-5-2">
+<ul class="org-ul">
+<li>get started with data calculation<br />
+<ul class="org-ul">
+<li><a href="#org4def2f9">Spreadsheet functions - COUNTIF</a><br /></li>
+<li><a href="#orgce2e8cf">Spreadsheet functions - SUMIF</a><br /></li>
+<li><a href="#org33db162">Spreadsheet functions - SUMPRODUCT</a><br /></li>
+<li><a href="#org2800188">Spreadsheet tools - Pivot table</a><br /></li>
+</ul></li>
+
+<li>Learn more SQL calculation<br />
+<ul class="org-ul">
+<li>Operation is a symbol that names the type of calculation to be done in a formula<br />
+<ul class="org-ul">
+<li>addition +<br /></li>
+<li>substration -<br /></li>
+<li>muliplication *<br /></li>
+<li>division /<br /></li>
+<li>modulo % (returns the remainder)<br /></li>
+<li>not equal &lt;&gt;,!=<br /></li>
+<li><p>
+SQL example<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> columnA, columnB, columnA+columnB <span style="color: #531ab6;">As</span> columnX
+<span style="color: #531ab6;">FROM</span> data_table
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> columnA, columnB, columnC, (columnA+columnB) * columnC <span style="color: #531ab6;">As</span> columnX
+<span style="color: #531ab6;">FROM</span> data_table
+</pre>
+</div>
+<pre class="example">
+SELECT columnA, columnB, columnA+columnB As columnX
+FROM data_table
+</pre></li>
+<li>aggrucation functions are function tat preform calculation on multiple values and returns a single value<br /></li>
+<li>SAFEDEVIDE help avoid deviding by zero<br /></li>
+<li>GROUPBY is a command that group rows that have the same values from a table into summary rows<br /></li>
+<li>GROUPBY asually paired with an aggrugation function (sum, count,&#x2026;)<br /></li>
+<li>EXTRACT commend pull on part of date to use<br /></li>
+<li><p>
+SQL example<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">EXTRACT</span>(<span style="color: #531ab6;">year</span> <span style="color: #531ab6;">from</span> data_col) <span style="color: #531ab6;">as</span> <span style="color: #531ab6;">year</span>, <span style="color: #8f0075;">COUNT</span>(*) <span style="color: #531ab6;">As</span> number_of_rides
+<span style="color: #531ab6;">FROM</span> data_table
+GROUPBY <span style="color: #531ab6;">year</span>
+ORDERBY <span style="color: #531ab6;">year</span> <span style="color: #531ab6;">DESC</span>
+</pre>
+</div></li>
+</ul></li>
+<li>Data validation process: a process that envolve checking and rechecking of your data so that it is complete, accurate, secure, and consistant<br /></li>
+<li>SQL temporary table<br />
+<ul class="org-ul">
+<li>a table that is created and exit termporaraly in data server<br /></li>
+<li><p>
+WITH clauseh elp creating temporary tables<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">WITH</span> temp_table <span style="color: #531ab6;">AS</span> ( <span style="color: #531ab6;">SELECT</span> * <span style="color: #531ab6;">FROM</span> DB <span style="color: #531ab6;">WHERE</span> col1 &lt;= 60)
+<span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">count</span>(*) <span style="color: #531ab6;">as</span> cnt <span style="color: #531ab6;">FROM</span> temp_table
+</pre>
+</div></li>
+<li>other statment to create table are<br />
+<ul class="org-ul">
+<li>SELECT INTO,<br /></li>
+<li>CREATE TABLE ( can add meta data)<br /></li>
+<li>with<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org88c36e8" class="outline-2">
+<h2 id="org88c36e8"><span class="section-number-2">8.</span> Spreadsheet</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>A spreadsheet is an application that load a structured data and put each datum in a cell where collectively can be analyzed, you can format how table look, emphasis a certain cell with format change, filter and sort with just a click.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org4a418e4" class="outline-3">
+<h3 id="org4a418e4"><span class="section-number-3">8.1.</span> Spreadsheet formulas</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Formulas in spreadsheet are instructions that perform calculation on data in cells.<br />
+<ul class="org-ul">
+<li>Example: =(A1+A2+A3+A4+A5)<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0491705" class="outline-3">
+<h3 id="org0491705"><span class="section-number-3">8.2.</span> Spreadsheet functions</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>Functions in spreadsheet are pre-built instructions that perform calculation on a cell or a range of cells.<br />
+<ul class="org-ul">
+<li>Example: =SUM(A1:A5)<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org2620754" class="outline-4">
+<h4 id="org2620754"><span class="section-number-4">8.2.1.</span> Spreadhseet functions - Count duplicate</h4>
+<div class="outline-text-4" id="text-8-2-1">
+<ul class="org-ul">
+<li>=COUNTIF(A:A,A1), will count if a value it repeated, then Filter &gt; 1 and sort to put duplicate together<br /></li>
+<li>=CONCATENATE(A1,B1) then =COUNTIF(C:C,C1) to determine duplicate base on two columns<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org837e299" class="outline-4">
+<h4 id="org837e299"><span class="section-number-4">8.2.2.</span> Spreadsheet functions - COUNTA</h4>
+<div class="outline-text-4" id="text-8-2-2">
+<p>
+Will return the number of non-empty cells in a range, if it returns a number that is lower than the total rows, it means that there are missing values.<br />
+</p>
+<ul class="org-ul">
+<li>COUNTA(range)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4def2f9" class="outline-4">
+<h4 id="org4def2f9"><span class="section-number-4">8.2.3.</span> Spreadsheet functions - COUNTIF</h4>
+<div class="outline-text-4" id="text-8-2-3">
+<p>
+Returns a conditional count across a range.<br />
+</p>
+<ul class="org-ul">
+<li>COUNTIF(range,"condition")<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org36dbf76" class="outline-4">
+<h4 id="org36dbf76"><span class="section-number-4">8.2.4.</span> Spreadsheet functions - COUNTIFS</h4>
+</div>
+<div id="outline-container-orgce2e8cf" class="outline-4">
+<h4 id="orgce2e8cf"><span class="section-number-4">8.2.5.</span> Spreadsheet functions - SUMIF</h4>
+<div class="outline-text-4" id="text-8-2-5">
+<p>
+Add values if a condition is meet<br />
+</p>
+<ul class="org-ul">
+<li>SUMIF(range_for_condition, condition, range_to_sum)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org33db162" class="outline-4">
+<h4 id="org33db162"><span class="section-number-4">8.2.6.</span> Spreadsheet functions - SUMPRODUCT</h4>
+<div class="outline-text-4" id="text-8-2-6">
+<p>
+Multiply arrays base on row and the sum all<br />
+</p>
+<ul class="org-ul">
+<li>SUMPRODUCT(array1, array2)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84d6a97" class="outline-4">
+<h4 id="org84d6a97"><span class="section-number-4">8.2.7.</span> Spreadsheet functions - ISBLANK</h4>
+<div class="outline-text-4" id="text-8-2-7">
+<p>
+Checks whether the referenced cell is empty.<br />
+</p>
+<ul class="org-ul">
+<li>ISBLANK(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f33b7f" class="outline-4">
+<h4 id="org8f33b7f"><span class="section-number-4">8.2.8.</span> Spreadsheet functions - ISNUMBER</h4>
+<div class="outline-text-4" id="text-8-2-8">
+<p>
+Checks whether the referenced cell is a number.<br />
+</p>
+<ul class="org-ul">
+<li>ISNUMBER(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc641a26" class="outline-4">
+<h4 id="orgc641a26"><span class="section-number-4">8.2.9.</span> Spreadsheet functions - ISTEXT</h4>
+<div class="outline-text-4" id="text-8-2-9">
+<p>
+Checks whether the referenced cell is a text.<br />
+</p>
+<ul class="org-ul">
+<li>ISTEXT(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08e0193" class="outline-4">
+<h4 id="org08e0193"><span class="section-number-4">8.2.10.</span> Spreadsheet functions - ISLOGICAL</h4>
+<div class="outline-text-4" id="text-8-2-10">
+<p>
+Checks whether the referenced cell is a boolean.<br />
+</p>
+<ul class="org-ul">
+<li>ISLOGICAL(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgedcc348" class="outline-4">
+<h4 id="orgedcc348"><span class="section-number-4">8.2.11.</span> Spreadsheet functions - ISDATE</h4>
+<div class="outline-text-4" id="text-8-2-11">
+<p>
+Checks whether the referenced cell is a date.<br />
+</p>
+<ul class="org-ul">
+<li>ISDATE(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c90f34" class="outline-4">
+<h4 id="org0c90f34"><span class="section-number-4">8.2.12.</span> Spreadsheet functions - ISEMAIL</h4>
+<div class="outline-text-4" id="text-8-2-12">
+<p>
+Checks whether the referenced cell is an email.<br />
+</p>
+<ul class="org-ul">
+<li>ISEMAIL(value)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2f0521" class="outline-4">
+<h4 id="orgb2f0521"><span class="section-number-4">8.2.13.</span> Spreadsheet functions - CONCATENATE</h4>
+<div class="outline-text-4" id="text-8-2-13">
+<p>
+a function that joins together two or more text string<br />
+</p>
+<ul class="org-ul">
+<li>CONCATENATE(item_1, item_2)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org98a6259" class="outline-4">
+<h4 id="org98a6259"><span class="section-number-4">8.2.14.</span> Spreadsheet functions - LEN</h4>
+<div class="outline-text-4" id="text-8-2-14">
+<p>
+Returns the length of a string.<br />
+</p>
+<ul class="org-ul">
+<li>LEN("text")<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e30734" class="outline-4">
+<h4 id="org6e30734"><span class="section-number-4">8.2.15.</span> Spreadsheet functions - TRIM</h4>
+<div class="outline-text-4" id="text-8-2-15">
+<p>
+that removes leading, trailing, and repeated spaces id data, ont works for ascii<br />
+</p>
+<ul class="org-ul">
+<li>TRIM("text")<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgefb9587" class="outline-4">
+<h4 id="orgefb9587"><span class="section-number-4">8.2.16.</span> Spreadsheet functions - LEFT</h4>
+<div class="outline-text-4" id="text-8-2-16">
+<p>
+a function that give you a set number of characters from the left side of a text string<br />
+</p>
+<ul class="org-ul">
+<li>LEFT(range, number of characters)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9c76193" class="outline-4">
+<h4 id="org9c76193"><span class="section-number-4">8.2.17.</span> Spreadsheet functions - MID</h4>
+<div class="outline-text-4" id="text-8-2-17">
+<ul class="org-ul">
+<li>a function that give you a segment frmo the middle of a text string<br /></li>
+<li>MID(range, starting point, number of characters)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org580fe04" class="outline-4">
+<h4 id="org580fe04"><span class="section-number-4">8.2.18.</span> Spreadsheet functions - RIGHT</h4>
+<div class="outline-text-4" id="text-8-2-18">
+<p>
+a function that give you a set number of characters from the right side of a text string<br />
+</p>
+<ul class="org-ul">
+<li>RIGHT(range, number of characters)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1b83647" class="outline-4">
+<h4 id="org1b83647"><span class="section-number-4">8.2.19.</span> Spreadsheet functions - FIND</h4>
+<div class="outline-text-4" id="text-8-2-19">
+<p>
+a function used to find a string in a text and return it's position to be later used with <a href="#orgefb9587">Left</a> or <a href="#org580fe04">RIGHT</a><br />
+</p>
+<ul class="org-ul">
+<li>FIND(search_for, text_to_search, [starting_at])<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org32a50dd" class="outline-4">
+<h4 id="org32a50dd"><span class="section-number-4">8.2.20.</span> Spreadsheet functions - VLOOKUP</h4>
+<div class="outline-text-4" id="text-8-2-20">
+<p>
+a function that searches for a certain value in a column to return a coresponding piece of information<br />
+</p>
+<ul class="org-ul">
+<li>VLOOKUP(data to lookup, where to look, column, false"for exact match")<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org195b9b8" class="outline-4">
+<h4 id="org195b9b8"><span class="section-number-4">8.2.21.</span> Spreadsheet functions - SORT</h4>
+<div class="outline-text-4" id="text-8-2-21">
+<ul class="org-ul">
+<li>SORT(table_range,column_number_to_sort_by,asending_status)<br /></li>
+<li>SORT(A2:E7,2,TRUE)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc1eacf9" class="outline-4">
+<h4 id="orgc1eacf9"><span class="section-number-4">8.2.22.</span> Spreadsheet functions - CONVERT</h4>
+<div class="outline-text-4" id="text-8-2-22">
+<p>
+A function that convert mesurment units (make sure to copy and paste as value afterwards Right click -&gt; Paste special -&gt; Value only)<br />
+</p>
+<ul class="org-ul">
+<li>CONVERT(value, current_unit, desired_unit)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org572dea8" class="outline-4">
+<h4 id="org572dea8"><span class="section-number-4">8.2.23.</span> Spreadsheet functions - VALUE</h4>
+<div class="outline-text-4" id="text-8-2-23">
+<p>
+Converts a string in any of the date, time or number formats that Google Sheets understands into a number.<br />
+</p>
+<ul class="org-ul">
+<li>VALUE("123")<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1bbced8" class="outline-3">
+<h3 id="org1bbced8"><span class="section-number-3">8.3.</span> Spreadsheet errors</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>Errors in spreadsheet:<br />
+<ul class="org-ul">
+<li>DIV/0: dividing by zero<br /></li>
+<li>ERROR!: error inside the formula<br /></li>
+<li>N/A: data not found<br /></li>
+<li>NAME?: formula name not found<br /></li>
+<li>NUM!: problem in the data type of value<br /></li>
+<li>REF!: referenced cell or range is deleted<br /></li>
+<li>VALUE!: indicate a problem with formula or reference cell<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org60bcffc" class="outline-3">
+<h3 id="org60bcffc"><span class="section-number-3">8.4.</span> Spreadsheet tools</h3>
+<div class="outline-text-3" id="text-8-4">
+</div>
+<div id="outline-container-org7713733" class="outline-4">
+<h4 id="org7713733"><span class="section-number-4">8.4.1.</span> Spreadsheet tools - Freeze</h4>
+<div class="outline-text-4" id="text-8-4-1">
+<ul class="org-ul">
+<li>Select the row<br /></li>
+<li>Views -&gt; Freeze =&gt; 1 row<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3e5083a" class="outline-4">
+<h4 id="org3e5083a"><span class="section-number-4">8.4.2.</span> Spreadsheet tools - Sort</h4>
+<div class="outline-text-4" id="text-8-4-2">
+<p>
+Sorting the data will bring duplicate close together.<br />
+</p>
+<ul class="org-ul">
+<li>Select all data<br /></li>
+<li>Data -&gt; Sort range -&gt; Advance range sorting option<br /></li>
+<li>Check "Data has header row"<br /></li>
+<li>Chose column to sort<br /></li>
+<li>(Click add another sort column if needed)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d7b2a6" class="outline-4">
+<h4 id="org9d7b2a6"><span class="section-number-4">8.4.3.</span> Spreadsheet tools - Filter</h4>
+<div class="outline-text-4" id="text-8-4-3">
+<p>
+Filter is importent in cleaning when yuo want to find a preticulat piece of information<br />
+</p>
+<ul class="org-ul">
+<li>Create filter<br />
+<ul class="org-ul">
+<li>Select the whole data<br /></li>
+<li>Data -&gt; Add filter<br /></li>
+</ul></li>
+<li>Filter views<br />
+<ul class="org-ul">
+<li>Data -&gt; Filter views<br /></li>
+</ul></li>
+<li>Slicer<br />
+<ul class="org-ul">
+<li>Data -&gt; Add a slicer<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org777661c" class="outline-4">
+<h4 id="org777661c"><span class="section-number-4">8.4.4.</span> Spreadsheet tools - Remove duplicate</h4>
+<div class="outline-text-4" id="text-8-4-4">
+<p>
+remove duplicates: a tool that automaticly search for and eliminate duplicates entries from a spreadsheet<br />
+</p>
+<ul class="org-ul">
+<li>Data -&gt; Data Clean-up -&gt; Remove duplicate<br /></li>
+<li>Check data have header row<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2800188" class="outline-4">
+<h4 id="org2800188"><span class="section-number-4">8.4.5.</span> Spreadsheet tools - Pivot table</h4>
+<div class="outline-text-4" id="text-8-4-5">
+<p>
+Pivot table summarize the data to get a new perspective. summarizing can only be done after chosing a calculation. whether it is an opperation or a function<br />
+</p>
+<ul class="org-ul">
+<li>select the whole data<br /></li>
+<li>Data -&gt; pivot table<br /></li>
+<li>New sheet and create<br /></li>
+</ul>
+<p>
+Calculated field: a fiels that carried out calculation from other fields<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org64c8f9e" class="outline-4">
+<h4 id="org64c8f9e"><span class="section-number-4">8.4.6.</span> Spreadsheet tools - Spell check</h4>
+<div class="outline-text-4" id="text-8-4-6">
+<ul class="org-ul">
+<li>Tools -&gt; Spelling -&gt; Spell check<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0e3dddb" class="outline-4">
+<h4 id="org0e3dddb"><span class="section-number-4">8.4.7.</span> Spreadsheet tools - Find and replace</h4>
+<div class="outline-text-4" id="text-8-4-7">
+<p>
+A tool that look for specific string and and replace it with somethign else<br />
+</p>
+<ul class="org-ul">
+<li>Edit -&gt; Find and replace<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfeac15e" class="outline-4">
+<h4 id="orgfeac15e"><span class="section-number-4">8.4.8.</span> Spreadsheet tools - Format number</h4>
+<div class="outline-text-4" id="text-8-4-8">
+<ul class="org-ul">
+<li>Format -&gt; Number<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge75df47" class="outline-4">
+<h4 id="orge75df47"><span class="section-number-4">8.4.9.</span> Spreadsheet tools - Clear all formating</h4>
+<div class="outline-text-4" id="text-8-4-9">
+<p>
+A tool that remove all formating in the spreadsheet.<br />
+</p>
+<ul class="org-ul">
+<li>Select all cell<br /></li>
+<li>Format -&gt; Clear all formating<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d9505b" class="outline-4">
+<h4 id="org2d9505b"><span class="section-number-4">8.4.10.</span> Spreadsheet tools - Conditional formating</h4>
+<div class="outline-text-4" id="text-8-4-10">
+<p>
+Conditional formating: a spreadsheet tool that changes how cells apear when value meet specific condition<br />
+</p>
+<ul class="org-ul">
+<li>Select the range<br /></li>
+<li>Format -&gt; conditional formating<br /></li>
+<li>Change the format rule and the style<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgccef712" class="outline-4">
+<h4 id="orgccef712"><span class="section-number-4">8.4.11.</span> Spreadsheet tools - Split text to columns</h4>
+<div class="outline-text-4" id="text-8-4-11">
+<p>
+Split a text base on a delimiter or separator into new columns<br />
+</p>
+<ul class="org-ul">
+<li>Select the column<br /></li>
+<li>Data -&gt; split text to columns<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f015ec" class="outline-4">
+<h4 id="org3f015ec"><span class="section-number-4">8.4.12.</span> Spreadsheet tools - Data Validation</h4>
+<div class="outline-text-4" id="text-8-4-12">
+<ul class="org-ul">
+<li>data validation function in spreadsheet, it allows you to control what can and cannot be enter in a spreadsheet<br />
+<ul class="org-ul">
+<li>by addig dropdown list with predetermined options<br /></li>
+<li>creating custom checkbox<br /></li>
+<li>protect data structure and formulas<br /></li>
+</ul></li>
+<li>Data -&gt; Data validation<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd6f0de" class="outline-2">
+<h2 id="orgfd6f0de"><span class="section-number-2">9.</span> SQL</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgc598293" class="outline-3">
+<h3 id="orgc598293"><span class="section-number-3">9.1.</span> SQL premade querys</h3>
+<div class="outline-text-3" id="text-9-1">
+</div>
+<div id="outline-container-orgb3782b7" class="outline-4">
+<h4 id="orgb3782b7"><span class="section-number-4">9.1.1.</span> SQL premade querys - Count duplicate</h4>
+<div class="outline-text-4" id="text-9-1-1">
+<ul class="org-ul">
+<li><p>
+count duplicate base on one column<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> Column1, <span style="color: #8f0075;">COUNT</span>(Column1)
+<span style="color: #531ab6;">FROM</span> TableName
+<span style="color: #531ab6;">GROUP</span> <span style="color: #531ab6;">BY</span> Column1
+<span style="color: #531ab6;">HAVING</span> <span style="color: #8f0075;">COUNT</span>(Column1) &gt; 1
+</pre>
+</div></li>
+<li><p>
+count duplicate base on mulitple column<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> Column1, Column2, <span style="color: #8f0075;">COUNT</span>(*)
+<span style="color: #531ab6;">FROM</span> TableName
+<span style="color: #531ab6;">GROUP</span> <span style="color: #531ab6;">BY</span> Column1, Column2
+<span style="color: #531ab6;">HAVING</span> <span style="color: #8f0075;">COUNT</span>(*) &gt; 1             
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6aac56d" class="outline-4">
+<h4 id="org6aac56d"><span class="section-number-4">9.1.2.</span> SQL premade querys - Return NULL</h4>
+<div class="outline-text-4" id="text-9-1-2">
+<ul class="org-ul">
+<li><p>
+Check for null rows<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> Column1
+<span style="color: #531ab6;">FROM</span> TableName
+<span style="color: #531ab6;">WHERE</span> TableName <span style="color: #531ab6;">IS</span> <span style="color: #531ab6;">NULL</span>;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgba2c54d" class="outline-4">
+<h4 id="orgba2c54d"><span class="section-number-4">9.1.3.</span> SQl premade querys - Numeric filtering base on value range</h4>
+<div class="outline-text-4" id="text-9-1-3">
+<ul class="org-ul">
+<li><p>
+filter numerical values<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> Column1
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+<span style="color: #531ab6;">WHERE</span> column1&gt;200            
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f8647f" class="outline-4">
+<h4 id="org9f8647f"><span class="section-number-4">9.1.4.</span> SQl premade querys - String filtering base on string lenght</h4>
+<div class="outline-text-4" id="text-9-1-4">
+<ul class="org-ul">
+<li><p>
+filter string base on lenght<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> Column1
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+<span style="color: #531ab6;">WHERE</span> LENGHT(column1)&gt;2            
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc44bd8b" class="outline-4">
+<h4 id="orgc44bd8b"><span class="section-number-4">9.1.5.</span> SQL premade querys - Find and replace</h4>
+<div class="outline-text-4" id="text-9-1-5">
+<ul class="org-ul">
+<li><p>
+With the help of <a href="#orgf608a8d">SQL expression - CASE</a><br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> customer_id,
+<span style="color: #531ab6;">CASE</span>
+<span style="color: #531ab6;">WHEN</span> first_name="Tnoy" <span style="color: #531ab6;">THEN</span> "Tony"
+<span style="color: #531ab6;">ELSE</span> first_name
+<span style="color: #531ab6;">END</span> <span style="color: #531ab6;">AS</span> cleanned_data
+<span style="color: #531ab6;">FROM</span> data_set.data_table
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf0b09e7" class="outline-3">
+<h3 id="orgf0b09e7"><span class="section-number-3">9.2.</span> SQL statements</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+A SQL statement is a set of instruction that consists of identifiers, parameters, variables, names, data types, and SQL reserved words that compiles successfully.<br />
+</p>
+</div>
+<div id="outline-container-org6061294" class="outline-4">
+<h4 id="org6061294"><span class="section-number-4">9.2.1.</span> SQL statements - DISTINCT</h4>
+<div class="outline-text-4" id="text-9-2-1">
+<p>
+The SELECT DISTINCT statement is used to return only distinct (different) values.<br />
+</p>
+<ul class="org-ul">
+<li><p>
+Syntax<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #531ab6;">DISTINCT</span> Column1
+<span style="color: #531ab6;">FROM</span> TableName
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2ee4d87" class="outline-4">
+<h4 id="org2ee4d87"><span class="section-number-4">9.2.2.</span> SQL statements - INSERT</h4>
+<div class="outline-text-4" id="text-9-2-2">
+<p>
+The INSERT INTO statement is used to insert new records in a table.<br />
+</p>
+<ul class="org-ul">
+<li><p>
+INSERT<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">INSERT</span> <span style="color: #531ab6;">INTO</span> TableName
+(Columns1, Column2)
+<span style="color: #531ab6;">VALUES</span>
+(Value1, Value2)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2abebf2" class="outline-4">
+<h4 id="org2abebf2"><span class="section-number-4">9.2.3.</span> SQL statements - UPDATE</h4>
+<div class="outline-text-4" id="text-9-2-3">
+<ul class="org-ul">
+<li><p>
+Update a value in table<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">UPDATE</span> <span style="color: #531ab6;">table_name</span>
+<span style="color: #531ab6;">SET</span> column1 = value1, column2 = value2, ...
+<span style="color: #531ab6;">WHERE</span> condition;             
+</pre>
+</div></li>
+<li><p>
+Example<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sq">UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge7bb788" class="outline-3">
+<h3 id="orge7bb788"><span class="section-number-3">9.3.</span> SQL functions</h3>
+<div class="outline-text-3" id="text-9-3">
+</div>
+<div id="outline-container-org887e66c" class="outline-4">
+<h4 id="org887e66c"><span class="section-number-4">9.3.1.</span> SQL functions - NULL</h4>
+<div class="outline-text-4" id="text-9-3-1">
+</div>
+<div id="outline-container-org186f6bc" class="outline-5">
+<h5 id="org186f6bc"><span class="section-number-5">9.3.1.1.</span> SQL functions - ISNULL</h5>
+</div>
+<div id="outline-container-orga623520" class="outline-5">
+<h5 id="orga623520"><span class="section-number-5">9.3.1.2.</span> SQL functions - IFNULL</h5>
+</div>
+</div>
+<div id="outline-container-org49a7f30" class="outline-4">
+<h4 id="org49a7f30"><span class="section-number-4">9.3.2.</span> SQL functions - TRIM</h4>
+<div class="outline-text-4" id="text-9-3-2">
+<ul class="org-ul">
+<li><p>
+A fucntion that remove leading and trailing spaces in strings<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">TRIM</span>(" " <span style="color: #531ab6;">FROM</span> Column1) <span style="color: #531ab6;">AS</span> NewColumn
+<span style="color: #531ab6;">FROM</span> TableName
+</pre>
+</div></li>
+<li><p>
+other syntax<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> <span style="color: #8f0075;">TRIM</span>(Column1) <span style="color: #531ab6;">AS</span> NewColumn
+<span style="color: #531ab6;">FROM</span> TableName
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2084b9b" class="outline-3">
+<h3 id="org2084b9b"><span class="section-number-3">9.4.</span> SQL expression</h3>
+<div class="outline-text-3" id="text-9-4">
+</div>
+<div id="outline-container-orgf608a8d" class="outline-4">
+<h4 id="orgf608a8d"><span class="section-number-4">9.4.1.</span> SQL expression - CASE</h4>
+<div class="outline-text-4" id="text-9-4-1">
+<ul class="org-ul">
+<li><p>
+CASE: the case statment goes through one or more conditions and returns a value as soon as the condition is met.<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">CASE</span>
+    <span style="color: #531ab6;">WHEN</span> condition1 <span style="color: #531ab6;">THEN</span> result1
+    <span style="color: #531ab6;">WHEN</span> condition2 <span style="color: #531ab6;">THEN</span> result2
+    <span style="color: #531ab6;">WHEN</span> conditionN <span style="color: #531ab6;">THEN</span> resultN
+    <span style="color: #531ab6;">ELSE</span> <span style="color: #531ab6;">result</span>
+<span style="color: #531ab6;">END</span>;
+</pre>
+</div></li>
+<li><p>
+Example<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #531ab6;">SELECT</span> OrderID, Quantity,
+<span style="color: #531ab6;">CASE</span>
+    <span style="color: #531ab6;">WHEN</span> Quantity &gt; 30 <span style="color: #531ab6;">THEN</span> <span style="color: #3548cf;">'The quantity is greater than 30'</span>
+    <span style="color: #531ab6;">WHEN</span> Quantity = 30 <span style="color: #531ab6;">THEN</span> <span style="color: #3548cf;">'The quantity is 30'</span>
+    <span style="color: #531ab6;">ELSE</span> <span style="color: #3548cf;">'The quantity is under 30'</span>
+<span style="color: #531ab6;">END</span> <span style="color: #531ab6;">AS</span> QuantityText
+<span style="color: #531ab6;">FROM</span> OrderDetails;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd1e1ccf" class="outline-2">
+<h2 id="orgd1e1ccf"><span class="section-number-2">10.</span> Share data through the art of visualization</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orgabc9b74" class="outline-3">
+<h3 id="orgabc9b74"><span class="section-number-3">10.1.</span> Visualizing data</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>draw conclusions and represent them as a story<br /></li>
+<li>A sucessfull data visualization help the views get to the same conclusion you found, but much quicker<br /></li>
+<li>framewordk that organize your thought about visualization<br />
+<ul class="org-ul">
+<li>McCandless Method:<br />
+<ul class="org-ul">
+<li>Information - accurate and valid data<br /></li>
+<li>Story - clear and intresting narrative<br /></li>
+<li>Goal - visual have a specific objective<br /></li>
+<li>Visual form - effective use of design<br /></li>
+</ul></li>
+<li>Kaiser Fung’s Junk Charts Trifecta Checkup<br />
+<ul class="org-ul">
+<li>Question<br />
+<ul class="org-ul">
+<li>What is the question?<br /></li>
+<li>Is the question intresting?<br /></li>
+</ul></li>
+<li>Data<br />
+<ul class="org-ul">
+<li>Does the data answer the question?<br /></li>
+<li>Is the data reliable?<br /></li>
+<li>Did some data get removed?<br /></li>
+<li>Did the data get transformed into a complicated metric?<br /></li>
+</ul></li>
+<li>Visual<br />
+<ul class="org-ul">
+<li>Does the visual elements represent the data clearly?<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Elements of art:<br />
+<ul class="org-ul">
+<li>Line: lines can be curver or straight, thick or thin, horizantal or vertical or diagonal, helps build visual form and structure.<br /></li>
+<li>Shape: need to always be two dimentional, can help add contrast<br /></li>
+<li>Color: can be describe by their hue, intensity, and their value<br /></li>
+<li>Space: the empty area in the graph, usialy between objects<br /></li>
+<li>Movement: done with dynamick graph to change the change of point that heve two coordinance over time<br /></li>
+</ul></li>
+<li>data visdualization inmpact<br />
+<ul class="org-ul">
+<li>comparing data over time:<br />
+<ul class="org-ul">
+<li>line<br /></li>
+<li>area<br /></li>
+<li>bar<br /></li>
+<li>stacked bar<br /></li>
+</ul></li>
+<li>comparing distinc objects:<br />
+<ul class="org-ul">
+<li>ordered bar<br /></li>
+<li>ordered column<br /></li>
+<li>grouped bar<br /></li>
+</ul></li>
+<li>data composition: combining the individual parts in a visualization and displaying them together as a whole.<br />
+<ul class="org-ul">
+<li>stackd bar<br /></li>
+<li>pie<br /></li>
+<li>donut<br /></li>
+<li>treemap<br /></li>
+<li>sstacked area<br /></li>
+</ul></li>
+<li>comparing data relationship<br />
+<ul class="org-ul">
+<li>scatter plot<br /></li>
+<li>buuble plot<br /></li>
+<li>column/line<br /></li>
+<li>heatmap<br /></li>
+</ul></li>
+</ul></li>
+<li>Design thinking<br />
+<ul class="org-ul">
+<li>design thinking: a humman centric approach that uses design concept to make it easiyer for people to use and understand tecknologie<br /></li>
+<li>Five stages of design process<br />
+<ul class="org-ul">
+<li>Empathize: knowing and uderstanding the audience strugles, hear loss, color blindness, eye sight (assecibilitys), or truble using or seeing some functions<br /></li>
+<li>Define: define the porblems that need to be solve, in your visual, to make it accesable to the audience<br /></li>
+<li>Ideate: come up with ways to solve the problem<br /></li>
+<li>Prototype: scratch those idea into visuals<br /></li>
+<li>test: get feed back from other people, that preferebly have the same problem as your audience<br /></li>
+</ul></li>
+</ul></li>
+<li>the audiene will have less question about what you are sharing if you add<br />
+<ul class="org-ul">
+<li>headline: a lines of words printed in large letter at the top of the visualization to communicate what data is bieng presented<br /></li>
+<li>subtitles: suport the headline by addint more context and description<br /></li>
+<li>labels identify the meaning of difirent element in the visualization<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd75616f" class="outline-3">
+<h3 id="orgd75616f"><span class="section-number-3">10.2.</span> creatign data visualization with tableau</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>tablea data types are:<br />
+<ul class="org-ul">
+<li># for numbers<br /></li>
+<li>ABC for strings<br /></li>
+<li>Globe icon for geographic data<br /></li>
+<li>Date<br /></li>
+</ul></li>
+<li>diverging color palete: display two range of color values to represent values in a scale<br /></li>
+<li>linking<br />
+<ul class="org-ul">
+<li>In tableau you can join/add databases together and utilizing data maping/compability<br /></li>
+<li>you can say which two columns represent the same thn and chage data types to match<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46f1758" class="outline-3">
+<h3 id="org46f1758"><span class="section-number-3">10.3.</span> creatign data stories</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li>Data storytelling is the capture of the audience attention with narrative and visuals about the data.<br /></li>
+<li>Before deciding what story to tell, define your audience, what is their stake, and what you want them to do after the presentation.<br /></li>
+<li>the narartive needs<br />
+<ul class="org-ul">
+<li>characters: can be stake holder, customers, client and others<br /></li>
+<li>settings: describes what is going on, how ofter it is happening, what tasks are involve, and other background information abot the data project that describe the curren situation<br /></li>
+<li>plot: conflict, is what create tension in the current situation, this could be a challenge from a compaitor, an inneffition process that need to be fixed, or new opportunity<br /></li>
+<li>big reveal: is how the data you show can solve the provlem or the plot<br /></li>
+<li>aha moment: share ercommendation<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf6f96c" class="outline-3">
+<h3 id="orgdf6f96c"><span class="section-number-3">10.4.</span> developing presentations and slideshows</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li>slider should have:<br />
+<ul class="org-ul">
+<li>consistant theme<br /></li>
+<li>title that summurise what we are talking about plus date of last update<br /></li>
+</ul></li>
+<li>presentation table of content<br />
+<ul class="org-ul">
+<li>purpose of presentation<br />
+<ul class="org-ul">
+<li>have one slide with title, presenter, and date of last update<br /></li>
+<li>haev one slider that summerise the goals or action need to be taken after the presentation<br /></li>
+</ul></li>
+<li>data storytelling<br />
+<ul class="org-ul">
+<li>have one slide that ask an intesting question before moving to the graph<br /></li>
+<li>for sliders with graph<br />
+<ul class="org-ul">
+<li>name/explain the graph if it is new to your audience<br /></li>
+<li>answer some obvious questions<br /></li>
+<li>state the insight of your graph<br /></li>
+<li>call out the data that support it<br /></li>
+</ul></li>
+</ul></li>
+<li>conclusion<br /></li>
+<li>appendix ( additional information about data, graph, and more insight that dont fit with the storytellling)<br /></li>
+</ul></li>
+<li>prepere question that might be asked<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2022-07-20 Wed 18:42</p>
+<p class="date">Created: 2024-04-02 Tue 17:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
