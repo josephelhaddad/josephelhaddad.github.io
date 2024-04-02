@@ -298,3 +298,50 @@ video {
   height: 100%;
   border-radius:20px;
 }
+
+.hheader {
+  background-color: black;
+  height: 80px;
+  width: 80px;
+  top: 0;
+  right: 0;
+  position: fixed;
+}
+
+.hheader a {
+  display: block;
+  padding: 40px;
+}
+
+.hheader img {
+  display: block;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+
+.hbot {
+  background-color: black;
+  height: 80px;
+  width: 80px;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+}
+
+.hbot a {
+  display: block;
+  padding: 40px;
+}
+
+.hbot img {
+  display: block;
+  position: fixed;
+  height: 60px;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
