@@ -1,0 +1,79 @@
+#+title:      Portfolio
+#+date:       [2023-02-20 Mon 12:11]
+#+filetags:   :note:
+#+identifier: 20230220T121111
+
+#+LATEX_HEADER: \usepackage{svg}
+#+LATEX_HEADER: \usepackage{tikz,pgfplots,amsmath}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+#+latex_header: \hypersetup{colorlinks=false}
+
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+#+OPTIONS: tex:t
+#+OPTIONS: H:6
+#+SETUPFILE: theme.setup
+
+
+
+#+begin_export html
+ <div class="hheader">
+ <a href="https://josephelhaddad.github.io/" class="bb"><img src="img/home.svg" alt="*"></a></div>
+ <div class="hbot">
+ <a href="#content" class="bb"><img src="img/top-arrow.svg" alt="*"></a></div>
+#+end_export
+
+#+begin_export html
+ <video controls>
+  <source src="videos/resume.mp4" type="video/mp4">
+</video> 
+#+end_export
+
+#+begin_export html
+ <div style="height: 100px;"></div>
+#+end_export
+#+INCLUDE: "plotly/mailing_result.html" export html
+* Project
+1. [[file:20230320T132120--finding-a-rental-apartment__script.org][Finding an appartment for rent]]
+2. [[file:20240115T193851--gathering-trivia-questions-from-the-web__script.org][Gathering Trivia Q&A]]
+3. [[file:20230308T205456--scraping-from-noxinfluencer-and-adding-additional-filters__script.org][Gathering YouTube influencers channels' data]]
+4. [[file:20240229T235456--harnessing-your-business-data__note.org][Harnessing your business' data]]
+* Notes
+- Color
+- [[file:20220715T073848--google-data-analytics__coursera_google_cnotes_datascience.org][Google Data Analytics]]
+- Hire and conquer
+- [[file:20220418T115131--excel-skills-for-business-specialization__note.org][Microsoft Excel]]
+- [[file:20221031T171547--data-analysis-with-r-specialization__dataanalysis_math_note_summary.org][Statistics with R]]
+  This note have a lot of math formulas written in $LaTeX$, it may take a while to load.
+- Thaughts
+- [[file:20240217T151333--typography__summary.org][Typography]]
+- [[file:20231125T220222--video-resume-script__note.org][Video resume script]]
+- [[file:20240317T234631--how-i-found-you__note.org][How did I foud you?]]
+* Tools I use
+- Canva
+- Excel
+- [[https://www.gnu.org/software/emacs/][Gnu Emacs]] and [[https://orgmode.org/][Org mode]]
+- Google colab
+- Jupyter notebbok
+- Rstudio
+* What next in my learning journey
+- Andrew Ng - DeepLearning.AI
+  - [[https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science][Coursera - Mathematics for Machine Learning and Data Science Specialization]]
+  - [[https://www.coursera.org/specializations/machine-learning-introduction][Coursera - Machine Learning Specialization]]
+  - [[https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops][Coursera - Machine Learning Engineering for Production (MLOps) Specialization]]
+  - [[https://www.coursera.org/learn/ai-for-everyone][Coursera - AI For Everyone]]
+  - [[https://www.coursera.org/specializations/deep-learning][Coursera - Deep Learning Specialization]]
+- [[https://aws.amazon.com/training/learn-about/cloud-practitioner][AWS Cloud practitioner]]
+- [[https://www.coursera.org/learn/erasmus-econometrics][Coursera - Econometrics: Methods and Applications]]
+- [[https://www.coursera.org/learn/microeconomics][Coursera - Microeconomics Principles]]
+- [[https://cs50.harvard.edu/x/2023/][CS50’s Introduction to Computer Science]]
+- [[https://aws.amazon.com/training/learn-about/data-analytics/][Data Analytics Learning Plan for AWS Certificate]]
+- [[https://www.amazon.com/Discrete-Mathematics-Applications-Susanna-Epp/dp/1337694193][Discrete Mathematics with Applications]]
+- Six Sigma
+  - [[https://www.coursera.org/specializations/six-sigma-fundamentals][Coursera - Six Sigma Yellow Belt Specialization]]
+  - [[https://www.coursera.org/specializations/six-sigma-green-belt][Coursera - Six Sigma Green Belt Specialization]]
+- [[https://www.udemy.com/course/accelerated-regular-expressions-training/][Udemy - Accelerated Regular Expressions Training - Regex]]
+* Contact
+Email: [[mailto:josephelhaddad@proton.me][josephelhaddad@proton.me]]
+
