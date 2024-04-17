@@ -46,7 +46,8 @@
 #+end_export
 #+INCLUDE: "plotly/mailing_result.html" export html
 * Contact
-My email has been changed to:
+Email: [[mailto:josephelhaddad@proton.me][josephelhaddad@proton.me]]
+My email has been changed to... potentially.
 Email: [[mailto:yoroziano.youssef@gmail.com][yoroziano.youssef@gmail.com]]
 
 * Project
