@@ -41,6 +41,8 @@
 </video> 
 #+end_export
 
+Here is the video I made on the Canva platform: [[https://www.canva.com/design/DAF7HpGN6Xc/rya669_dyKuheBEjsnKVSA/edit?utm_content=DAF7HpGN6Xc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton][Link]].
+
 #+begin_export html
  <div style="height: 100px;"></div>
 #+end_export
