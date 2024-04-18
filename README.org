@@ -15,18 +15,6 @@
 #+OPTIONS: H:6
 #+SETUPFILE: theme.setup
 
-#+begin_export html
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SB2K68EVD6');
-</script>
-#+end_export
 
 #+begin_export html
  <div class="hheader">
@@ -49,7 +37,7 @@ Here is the video I made on the Canva platform: [[https://www.canva.com/design/D
 #+INCLUDE: "plotly/mailing_result.html" export html
 * Contact
 Email: [[mailto:josephelhaddad@proton.me][josephelhaddad@proton.me]]
-My email has been changed to... potentially.
+My email has been changed to...
 Email: [[mailto:yoroziano.youssef@gmail.com][yoroziano.youssef@gmail.com]]
 
 * Project
