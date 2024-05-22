@@ -48,7 +48,7 @@ Here is the video I made on the Canva platform: [[https://www.canva.com/design/D
 #+end_export
 #+INCLUDE: "plotly/mailing_result.html" export html
 * Contact
-Email: [[mailto:jhaddad.data@gmail.com][jhaddad.data@gmail.com]]
+Email: [[mailto:yoroziano.youssef@gmail.com][yoroziano.youssef@gmail.com]]
 
 * Project
 1. [[file:20230320T132120--finding-a-rental-apartment__script.org][Finding an appartment for rent]]
