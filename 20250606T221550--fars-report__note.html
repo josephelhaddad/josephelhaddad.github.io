@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-06-20 Fri 14:45 -->
+<!-- 2025-06-20 Fri 15:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FARS Report</title>
@@ -23,19 +23,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org96290d0">1. About</a></li>
-<li><a href="#org9414aee">2. Vision zero actions</a></li>
-<li><a href="#orga4d87c0">3. Variables</a>
+<li><a href="#orgcd7bfa4">1. About</a></li>
+<li><a href="#org3b80a04">2. Vision zero actions</a></li>
+<li><a href="#orgc511887">3. Variables</a>
 <ul>
-<li><a href="#org3c1bd29">3.1. Existing ones</a></li>
-<li><a href="#org06be108">3.2. New variables</a></li>
+<li><a href="#orgc8b18f2">3.1. Existing ones</a></li>
+<li><a href="#org6085ba9">3.2. New variables</a></li>
 </ul>
 </li>
-<li><a href="#org961faac">4. EDA</a>
+<li><a href="#org7ea91aa">4. EDA</a>
 <ul>
-<li><a href="#org5b25ca7">4.1. Pedestrian Fatality trend In the USA</a></li>
-<li><a href="#orgb108530">4.2. Pedestrian Fatalities in New York</a></li>
-<li><a href="#org0c22ca8">4.3. More explorations</a></li>
+<li><a href="#org7cbe881">4.1. Pedestrian Fatality trend In the USA</a></li>
+<li><a href="#org4a923d2">4.2. Pedestrian Fatalities in New York</a></li>
+<li><a href="#orgdf9643e">4.3. More explorations</a></li>
 </ul>
 </li>
 </ul>
@@ -57,23 +57,23 @@
 <a href="https://josephelhaddad.github.io/" class="bb"><img src="https://josephelhaddad.github.io/img/home.svg" alt="*"></a></div>
 <div class="hbot">
 <a href="#content" class="bb"><img src="https://josephelhaddad.github.io/img/top-arrow.svg" alt="*"></a></div>
-<div id="outline-container-org96290d0" class="outline-2">
-<h2 id="org96290d0"><span class="section-number-2">1.</span> About</h2>
+<div id="outline-container-orgcd7bfa4" class="outline-2">
+<h2 id="orgcd7bfa4"><span class="section-number-2">1.</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-This project serve the propuse of discovering whether the effort of NYC, that were partly initiated by Amy Cohen and Lizi Rahman had avail.<br />
-To answer the question, we will be analyzing Fatality Analysis Reporting System from <a href="https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS">National Highway Traffic Safety Administration</a>.<br />
-The data used is from 2005 to 2023<br />
+In this report we will analyze the analyzing Fatality Analysis Reporting System from <a href="https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS">National Highway Traffic Safety Administration</a>, to determine if New York's vision zero, that were partly initiated by Amy Cohen and Lizi Rahman, had reduced casualties.<br />
 </p>
 
 <p>
-New York State began making significant changes to pedestrian safety with the launch of the Vision Zero program in New York City in 2014. This program was inspired by a similar initiative in Sweden and aimed to eliminate traffic fatalities and severe injuries. Simultaneously, New York State initiated its own Pedestrian Safety Action Plan in 2016, allocating $110 million over five years to enhance pedestrian safety across Upstate and Long Island<br />
+The data used is from 2005 to 2023.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org9414aee" class="outline-2">
-<h2 id="org9414aee"><span class="section-number-2">2.</span> Vision zero actions</h2>
+
+<div id="outline-container-org3b80a04" class="outline-2">
+<h2 id="org3b80a04"><span class="section-number-2">2.</span> Vision zero actions</h2>
 <div class="outline-text-2" id="text-2">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Qo9v6Dwisgg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <ul class="org-ul">
 <li>Lowering the speed limit from 30 to 25<br /></li>
 <li>The installation of over 3000 speed cameras that lead to 70% decrease in speeding.<br /></li>
@@ -90,17 +90,17 @@ New York State began making significant changes to pedestrian safety with the la
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4d87c0" class="outline-2">
-<h2 id="orga4d87c0"><span class="section-number-2">3.</span> Variables</h2>
+<div id="outline-container-orgc511887" class="outline-2">
+<h2 id="orgc511887"><span class="section-number-2">3.</span> Variables</h2>
 <div class="outline-text-2" id="text-3">
 
-<div id="org17d61f7" class="figure">
+<div id="orgf2f2abf" class="figure">
 <p><img src="plotly/FARS/fars_schema.png" alt="fars_schema.png" /><br />
 </p>
 </div>
 </div>
-<div id="outline-container-org3c1bd29" class="outline-3">
-<h3 id="org3c1bd29"><span class="section-number-3">3.1.</span> Existing ones</h3>
+<div id="outline-container-orgc8b18f2" class="outline-3">
+<h3 id="orgc8b18f2"><span class="section-number-3">3.1.</span> Existing ones</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><code>PEDS</code>: People involved in a crash who were not inside a motor vehicle.<br />
@@ -120,8 +120,8 @@ New York State began making significant changes to pedestrian safety with the la
 </ul>
 </div>
 </div>
-<div id="outline-container-org06be108" class="outline-3">
-<h3 id="org06be108"><span class="section-number-3">3.2.</span> New variables</h3>
+<div id="outline-container-org6085ba9" class="outline-3">
+<h3 id="org6085ba9"><span class="section-number-3">3.2.</span> New variables</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li><code>ID</code>: Merge the <code>ST_CASE</code> with the year of the accident.<br /></li>
@@ -146,16 +146,16 @@ This variables was using on a EDA for both USA overview and NY state overview; D
 </div>
 </div>
 
-<div id="outline-container-org961faac" class="outline-2">
-<h2 id="org961faac"><span class="section-number-2">4.</span> EDA</h2>
+<div id="outline-container-org7ea91aa" class="outline-2">
+<h2 id="org7ea91aa"><span class="section-number-2">4.</span> EDA</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org5b25ca7" class="outline-3">
-<h3 id="org5b25ca7"><span class="section-number-3">4.1.</span> Pedestrian Fatality trend In the USA</h3>
+<div id="outline-container-org7cbe881" class="outline-3">
+<h3 id="org7cbe881"><span class="section-number-3">4.1.</span> Pedestrian Fatality trend In the USA</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li><p>
-<b>Yearly Pedestrians Fatalities In The United State</b><br />
+<b>Yearly Pedestrians Fatalities In The United States</b><br />
 </p>
 <html>
 <head><meta charset="utf-8" /></head>
@@ -202,8 +202,8 @@ New York plans did stabilizers/reduce the fatality rate among bicyclists, unlike
 </div>
 </div>
 
-<div id="outline-container-orgb108530" class="outline-3">
-<h3 id="orgb108530"><span class="section-number-3">4.2.</span> Pedestrian Fatalities in New York</h3>
+<div id="outline-container-org4a923d2" class="outline-3">
+<h3 id="org4a923d2"><span class="section-number-3">4.2.</span> Pedestrian Fatalities in New York</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li><p>
@@ -224,12 +224,12 @@ New York plans did stabilizers/reduce the fatality rate among bicyclists, unlike
 </ul>
 </div>
 </div>
-<div id="outline-container-org0c22ca8" class="outline-3">
-<h3 id="org0c22ca8"><span class="section-number-3">4.3.</span> More explorations</h3>
+<div id="outline-container-orgdf9643e" class="outline-3">
+<h3 id="orgdf9643e"><span class="section-number-3">4.3.</span> More explorations</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li><p>
-<b>Density Map Of Pedestrian Casualties In New York By Hour And Month For Both Pre &amp; Post Vision Zero</b><br />
+<b>Density Map Of Pedestrian Casualties In New York By Hour And Month For Both Pre- &amp; Post-Vision Zero</b><br />
 </p>
 <html>
 <head><meta charset="utf-8" /></head>
@@ -258,7 +258,7 @@ New York plans did stabilizers/reduce the fatality rate among bicyclists, unlike
 </html></li>
 </ul></li>
 <li><p>
-<b>Density Map Of Pedestrian Casualties In New York By Hour And Age For Both Pre &amp; Post Vision Zero</b><br />
+<b>Density Map Of Pedestrian Casualties In New York By Hour And Age For Both Pre- &amp; Post-Vision Zero</b><br />
 </p>
 <html>
 <head><meta charset="utf-8" /></head>
@@ -270,12 +270,12 @@ New York plans did stabilizers/reduce the fatality rate among bicyclists, unlike
 <ul class="org-ul">
 <li>We can notice a shit in count that start at 17H<br /></li>
 <li>The lack of fatalities of pedestrians aged 10 to 50 can be attributed to them being at school or workplace<br /></li>
-<li>Pre-vision zero there was a spike of casualties among your people in the early morning<br /></li>
-<li>Post-vision zero we can see a spike in fatalities after 17H, especially among the elderly.<br /></li>
+<li>Pre-vision zero, there was a spike of casualties among your people in the early morning<br /></li>
+<li>Post-vision zero, we can see a spike in fatalities after 17H, especially among the elderly.<br /></li>
 </ul></li>
 <li><p>
 <b>Box plot describing the distribution of the time it took the medic to arrive to the scene of the accident in all recording weather conditions</b><br />
-How did the medic responsiveness change pre- and post-project zero? One of the variables that might hinder the medics  from arriving in time the weather.<br />
+How did the medic responsiveness change pre- and post-project zero? One of the variables that might hinder the medics from arriving in time is the weather.<br />
 The variable Delta<sub>acc</sub><sub>medc</sub><sub>int</sub> represent the time it took the medic to arrive in minutes; the x-axis is in log-scale.<br />
 </p>
 <html>
@@ -295,7 +295,7 @@ Medic arrival time improved in smoky, sleety, and snowy weather; but not so in c
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2025-06-06 Fri 22:15</p>
-<p class="date">Created: 2025-06-20 Fri 14:45</p>
+<p class="date">Created: 2025-06-20 Fri 15:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
