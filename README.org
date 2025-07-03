@@ -1,0 +1,64 @@
+#+title:      Portfolio
+#+date:       [2023-02-20 Mon 12:11]
+#+filetags:   :note:
+#+identifier: 20230220T121111
+
+#+LATEX_HEADER: \usepackage{svg}
+#+LATEX_HEADER: \usepackage{tikz,pgfplots,amsmath}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+#+latex_header: \hypersetup{colorlinks=false}
+
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+#+OPTIONS: tex:t
+#+OPTIONS: H:6
+#+SETUPFILE: theme.setup
+
+#+begin_export html
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SB2K68EVD6');
+</script>
+#+end_export
+
+#+begin_export html
+ <div class="hheader">
+ <a href="https://josephelhaddad.github.io/" class="bb"><img src="img/home.svg" alt="*"></a></div>
+ <div class="hbot">
+ <a href="#content" class="bb"><img src="img/top-arrow.svg" alt="*"></a></div>
+#+end_export
+
+* Contact
+- Email: [[mailto:joseph.ergo9@gmail.com][joseph.ergo9@gmail.com]]
+- Privacy focus email: [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
+- LinkedIn: https://www.linkedin.com/in/joseph-ergo
+
+* Short Introduction
+Salutations to you, dear reader.
+
+My name is Joseph, and I specialize in data scraping, formatting, and analysis, as well as making small automation scripts.
+
+Here are some of my projects:
+1) My first big project was with an influencer marketing agency, where I had to quickly identify and onboard rising influencers before competitors could.
+   [[file:20230308T205456--scraping-from-noxinfluencer-and-adding-additional-filters__script.org][Project Page]].
+2) My second major project involved scraping Google Maps for business data, applying filters, and semi-automating outreach.
+   [[file:20240317T234631--how-i-found-you__note.org][Project Page]].
+3) One of the kind people who responded to my email gave me a vague assignment—which pushed me to learn OSINT.
+   [[file:20240401T034156--nsw-project__project.org][Project Page]].
+4) While working on lead acquisition from Google Maps, among other tasks, I discovered an unusual behavior—almost like a bug—in the platform.
+   [[file:20250109T202901--google-map-plan__note.org][Project Page]].
+5) The goal of this project is to cluster our existing customer database for targeted marketing—similar to a tiered segmentation algorithm for client categorization.
+   [[file:20240229T235456--harnessing-your-business-data__note.org][Project Page]]
+6) I joined a Data Evaluation community's discussion group. While I didn't participate in their core logic modeling work, I independently scraped government data to analyze whether a discussed project successfully met its objectives.
+   [[file:20250606T221550--fars-report__note.org][Project Page]].
+7) Finally, as a weekend project, I built a price comparison tool that scrapes and analyzes product prices across multiple e-commerce platforms.
+   [[file:20250627T190048--shopify-scrape__note.org][Project Page]].
+
+Thanks for taking the time to explore my work! If you'd like to discuss data solutions, automation, or potential collaborations, I'd love to connect. Feel free to reach out anytime.
