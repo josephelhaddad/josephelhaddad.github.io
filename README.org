@@ -39,11 +39,11 @@
 - Email: [[mailto:joseph.ergo9@gmail.com][joseph.ergo9@gmail.com]]
 - Privacy focus email: [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
 - LinkedIn: https://www.linkedin.com/in/joseph-ergo
-
+- Website: https://josephelhaddad.github.io/
 * Short Introduction
 Salutations to you, dear reader.
 
-My name is Joseph, and I specialize in data scraping, formatting, and analysis, as well as making small automation scripts.
+My name is Joseph, and I specialize in data scraping, formatting, and analysis, as well as making small automation scripts with AI integration.
 
 Here are some of my projects:
 1) My first big project was with an influencer marketing agency, where I had to quickly identify and onboard rising influencers before competitors could.
