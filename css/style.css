@@ -1,67 +1,81 @@
 @font-face {
   font-family: 'Jost';
   font-style: normal;
-  src: local(''),url('../font/Jost/Jost-VariableFont_wght.ttf') format('truetype')
+  src: local(''),url('../font/Jost/Jost-VariableFont_wght.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Jost';
   font-style: italic;
-  src: local(''),url('../font/Jost/Jost-Italic-VariableFont_wght.ttf') format('truetype')
+  src: local(''),url('../font/Jost/Jost-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 
 @font-face {
-  font-family: 'Eb_Garamond';
+  font-family: 'EB_Garamond';
   font-style: normal;
-  src: local(''),url('../font/EB_Garamond/EB_Garamond-VariableFont_wght.ttf') format('truetype')
+  src: local(''),url('../font/EB_Garamond/EB_Garamond-VariableFont_wght.ttf') format('truetype');
 }
 @font-face {
   font-family: 'EB_Garamond';
   font-style: italic;
-  src: local(''),url('../font/EB_Garamond/EB_Garamond-Italic-VariableFont_wght.ttf') format('truetype')
+  src: local(''),url('../font/EB_Garamond/EB_Garamond-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 html {
-    scroll-behavior:smooth;}
+    scroll-behavior:smooth;
+    font-size:100%;}
 
-body {
+body{
     font-family: 'Jost';
-    font-size: 18px;
-    text-wrap:pretty;
-    background-color: #ffffff
+    font-size: clamp(1rem, 0.75vw + 0.9rem, 1.25rem)!important;
+    line-height:1.6!important;
+    background-color: #ffffff;
 }
-
-p {font-size:20px}
-div:focus-visible{font-size:30px}
-
-h1,h2,h3,h4,h5,h6 {
-    /border-bottom: solid #b5b5b5 1px;
-    text-decoration-line: underline;
-    font-family: 'EB_Garamond';
-    text-wrap:balance;
-    margin-bottom:10px;
-}
-
-h1 {font-size:250%;color:#000000;margin-top: 60px;text-align:center!important}
-h2 {font-size:220%;color:#000000;margin-top: 50px;}
-h3 {font-size:190%;color:#000000;margin-top: 40px;}
-h4 {font-size:160%;color:#000000;margin-top: 30px;}
-h5 {font-size:130%;color:#000000;margin-top: 20px;}
-h6 {font-size:100%;color:#000000;margin-top: 10px;}
 
 #content {
     background-color:#ffffff;
     max-width: 100%;
-    font-size:20px;}
+    padding: clamp(1rem, 3vw, 3rem);
+    margin-left: 25vw;
+    }
 
-@media screen and (max-width: 768px) {
-    #content {
-	padding: 1.618em 1.236em;
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+p, ol, ul, dl {
+  font-size: inherit; /* Inherit from body */
+  line-height: inherit;
+  margin-bottom: clamp(1rem, 1.5vw, 1.8rem);
 }
+
+li {
+  margin-bottom: 0.5em !important; /* Add !important if needed */
 }
 
+div:focus-visible{
+    font-size:30px;
+    font-size: clamp(1.5rem, 1.5vw, 1.8rem);}
 
-.title{margin-top:10px}
+h1, h2 ,h3, h4 ,h5 ,h6 {
+    text-decoration-line: underline;
+    font-family: 'EB_Garamond', serif;
+    text-wrap: balance;
+    margin: clamp(1rem, 1vw, 2rem) 0;
+    text-transform: capitalize;
+    text-decoration-color: black;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  text-align: center!important;
+}
+
+h2 { font-size: clamp(1.8rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.6rem, 3.5vw, 2.8rem); }
+h4 { font-size: clamp(1.4rem, 3vw, 2.4rem); }
+h5 { font-size: clamp(1.3rem, 2.5vw, 2rem); }
+h6 { font-size: clamp(1.2rem, 2vw, 1.7rem); }
+
+
 .dialogue{
     text-align:center;
     width:70%;
@@ -112,6 +126,8 @@ h6 {font-size:100%;color:#000000;margin-top: 10px;}
     font-family: 'EB_Garamond';
     font-size: 20px;
     overflow: hidden;
+    width: 25vw;
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 #table-of-contents a:hover {
@@ -138,8 +154,6 @@ h6 {font-size:100%;color:#000000;margin-top: 10px;}
 	border-radius: 0px 0px 0px 0px;
     }
 }
-
-
 
 li.active {
     background-color: #fdfdfd;
@@ -180,16 +194,15 @@ ul.nav > li.active li.active > a {
 }
 
 
+#postamble {
+    width: 25vw;
+    font-size: clamp(1.2rem, 1.7vw, 2rem);
+}
 #postamble .date {
     color: #fff;
     text-align: right;
-    font-family: 'Courier Prime', sans-serif;
-    font-style: normal;
-
+    font-family: "Roboto-mono";
 }
-
-
-
 
 @media screen and (max-width: 768px) {
     #toggle-sidebar h2 {
@@ -299,51 +312,85 @@ video {
   border-radius:20px;
 }
 
-.hheader {
-  background-color: black;
-  height: 80px;
-  width: 80px;
+.hheader{
   top: 0;
+  }
+
+.hbot{
+  bottom: 0;}
+
+.hheader, .hbot {
+  background-color: black;
+  height: 5rem;
+  width: 5rem;
   right: 0;
   position: fixed;
   z-index:2;
 }
 
-.hheader a {
-  display: block;
-  padding: 40px;
+/* Add this to your CSS */
+.hbot a, .hheader a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.hheader img {
-  display: block;
-  position: fixed;
-  height: 60px;
-  top: 0;
-  right: 0;
-  margin: 10px;
+.hbot img, .hheader img{
+  position: static; /* Remove fixed positioning */
+  margin: 0; /* Reset margin */
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
 }
 
 
-.hbot {
-  background-color: black;
-  height: 80px;
-  width: 80px;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index:2;
+.centered_title {text-align: center;font-weight:bold}
+
+
+
+.centered_more_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(80%, 250px); /* Responsive width */
+    min-width: 180px; /* Minimum size on mobile */
+    margin: 2rem auto;
+    border: max(0.25rem, 0.3vw) black solid; /* Responsive border */
+    border-radius: 0px;
+    background-color: white;
+    padding: clamp(0.7rem, 1.5vw, 1.2rem); /* Responsive padding */
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem); /* Responsive font */
+    transition: all 0.1s ease; /* Smooth transitions */
+    text-align: center;
+    cursor: pointer;
 }
 
-.hbot a {
-  display: block;
-  padding: 40px;
+/* For better mobile tap targets */
+@media (max-width: 480px) {
+    .centered_more_button {
+        min-width: 85vw; /* Full-width on small screens */
+        padding: 1.1rem;
+        font-size: 1.2rem;
+    }
 }
 
-.hbot img {
-  display: block;
-  position: fixed;
-  height: 60px;
-  bottom: 0;
-  right: 0;
-  margin: 10px;
+.centered_more_button a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%; /* Ensure full clickable area */
+    transition: color 0.1s ease;
 }
+
+.centered_more_button:hover {
+    background-color: black;
+    border-color: white;
+    }
+
+.centered_more_button:hover a {
+    color: white;
+}
+
