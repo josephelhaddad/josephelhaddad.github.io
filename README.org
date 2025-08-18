@@ -121,7 +121,7 @@ Head first on OSINT for an interview</a></h4>
 An interviewer tasked me with this: "Find out how NSW Govt run tenders for marketing projects"
 I had, and still have, no idea on how to do so; but from what I understand, the marketing agency wants work on government projects.
 
-I though, maybe if e initiate an interaction with someone and the government, persuade them to think that our service is good, we could get some favoritism.
+I though, maybe if we initiate an interaction with someone and the government, persuade them to think that our service is good, we could get some favoritism.
 
 So, I went to find one of the high officials, extract as much as I can about him and their surrounding. 
 
