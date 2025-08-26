@@ -61,6 +61,7 @@ h1, h2 ,h3, h4 ,h5 ,h6 {
     margin: clamp(1rem, 1vw, 2rem) 0;
     text-transform: capitalize;
     text-decoration-color: black;
+    color: black
 }
 
 h1 {
