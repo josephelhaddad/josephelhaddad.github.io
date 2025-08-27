@@ -1,26 +1,3 @@
-/*@font-face {
-  font-family: 'Jost';
-  font-style: normal;
-  src: local(''),url('../font/Jost/Jost-VariableFont_wght.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Jost';
-  font-style: italic;
-  src: local(''),url('../font/Jost/Jost-Italic-VariableFont_wght.ttf') format('truetype');
-}
-
-
-@font-face {
-  font-family: 'EB Garamond', serif;
-  font-style: normal;
-  src: local(''),url('../font/EB_Garamond/EB_Garamond-VariableFont_wght.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  src: local(''),url('../font/EB_Garamond/EB_Garamond-Italic-VariableFont_wght.ttf') format('truetype');
-}*/
-
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
