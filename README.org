@@ -65,6 +65,23 @@ As I was scraping Google map I discover that 2.7% of all records I have, are of 
 ** Project 2
 #+begin_export html
 <h4 class="centered_title">
+<a href="20250824T214000--job-market-research__note.html" style="color: black;">
+Job Market Research</a></h4>
+#+end_export
+
+/Preview:/
+#+INCLUDE: "Resources/Plots/linkedin_research/sunburst__loation_type_.html" export html
+
+As I was planning to start job hunting, again, I had the idea of gathering LinkedIn data. My goal was having data of companies to sort, so I can prioritize which to contact... as well as doing some analysis.
+
+#+begin_export html
+ <button class="centered_more_button">
+<a href="20250824T214000--job-market-research__note.html">Read More</a>
+ </button>
+#+end_export
+** Project 3
+#+begin_export html
+<h4 class="centered_title">
 <a href="20230308T205456--scraping-from-noxinfluencer-and-adding-additional-filters__script.html" style="color: black;">
 Data Enrichment</a></h4>
 #+end_export
@@ -86,7 +103,7 @@ Once a channel meet the criteria, I had to manually copy some information to a m
  </button>
 #+end_export
 
-** Project 3
+** Project 4
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240317T234631--how-i-found-you__note.html" style="color: black;">
@@ -107,7 +124,7 @@ Example of the email I sent is in the webpage.
 <a href="20240317T234631--how-i-found-you__note.html">Read More</a>
  </button>
 #+end_export
-** Project 4
+** Project 5
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240401T034156--nsw-project__project.html" style="color: black;">
@@ -130,7 +147,7 @@ So, I went to find one of the high officials, extract as much as I can about him
 <a href="20240401T034156--nsw-project__project.html">Read More</a>
  </button>
 #+end_export
-** Project 5
+** Project 6
 #+begin_export html
 <h4 class="centered_title">
 <a href="20250606T221550--fars-report__note.html" style="color: black;">
@@ -148,7 +165,7 @@ I took a large dataset from FARS website, cleaned it, and analyze it.
 <a href="20250606T221550--fars-report__note.html">Read More</a>
  </button>
 #+end_export
-** Project 6
+** Project 7
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240229T235456--harnessing-your-business-data__note.html" style="color: black;">
@@ -189,6 +206,7 @@ For Customer A, we will send coupons to encourage repeat purchases. For Customer
 - Future
   - DuckDB
   - Free or Open BSD
+  - CompTia Core
 * Contact
 - Email: [[mailto:joseph.ergo9@gmail.com][joseph.ergo9@gmail.com]]
 - Privacy focus email: [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
