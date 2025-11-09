@@ -70,7 +70,7 @@ Job Market Research (Scraping) (Old)</a></h4>
 #+ATTR_HTML: :width 70%
 [[file:Resources/Images/02__epsilon__upsetplot.webp]]
 
-As I was planning to start job hunting, again, I had the idea of gathering LinkedIn data. My goal was having data of companies to sort, so I can prioritize which to contact... as well as doing some analysis.
+As I was planning to start job hunting, again, I had the idea of gathering Linked In data. My goal was having data of companies to sort, so I can prioritize which to contact... as well as doing some analysis.
 
 #+begin_export html
  <button class="centered_more_button">
@@ -134,7 +134,7 @@ I made this script when I was looking for a job, I needed a list of companies to
 
 As I collected the data from Google map, I kept enhancing it by adding data from the government of CA, and WHOIS; and I did some analysis at the end.
 
-Example of the email I sent is in the webpage.
+Example of the email I sent is in the web page.
 
 #+begin_export html
  <button class="centered_more_button">
@@ -211,20 +211,20 @@ For Customer A, we will send coupons to encourage repeat purchases. For Customer
  </button>
 #+end_export
 
-* Professional Experiance
+* Professional Experience
 ** Currier Marketing
-- Durration: June 2024 - Mar 2025
+- Duration: June 2024 - Mar 2025
 - Title: Data specialist
 - Key contributions
   - Developed a script that scan a website and report errors (404s, bad redirects, duplicate content, JS dependency), improving the user experience.
   - Developed a script that identify SEO cannibalization issues while maintaining confidentiality.
-  - Sourced and structured a proprietary database to build a Yelp-like search webapp.
+  - Sourced and structured a proprietary database to build a Yelp-like search web app.
   - Generated targeted prospect lists and developed creative outreach strategies.
   - Crafted presentations using Canva to communicate complex ideas, report on progress.
 * Skills
 - Python programming
   Libraries:
-  - [Data scraping] Requests, Selenuim base, BeautifulSoup
+  - [Data scraping] Requests, Selenium base, Beautiful Soup
   - [Data manipulation] Pandas, Polars
   - [Data visualization] Plotly Express, Matplotlib, GGraph
   - [Image manipulation] Pillow, OpenCV
