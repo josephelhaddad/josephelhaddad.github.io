@@ -37,33 +37,54 @@
 #+end_export
 
 * About me
-Salutations; I'm Joseph, a self-taught data analyst, engineer, and scraper.
-Despite life's challenges, my goal remains a remote job, either full or part-time, and having friends to tackle the challenges of this changing world with.
+Hi, I’m Joseph, a self-taught data analyst from Morocco inspired by Hans Rosling’s work.
+My hands-on experience in data scraping, analysis, and visualization fuels my innovative thinking—though I’d benefit from structured onboarding to align with team standards.
+
+I’m available to work remotely at any time, fully flexible across time zones. I’m happy to start as a free intern, either part-time or full-time, to contribute and learn. Beyond the role, I hope to build meaningful, lasting connections with teammates.
+
+Feel free to reach me at [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
 
 * Projects
 #+begin_export html
 <script src="https://cdn.jsdelivr.net/npm/plotly.js@latest/dist/plotly.min.js"></script>
 #+end_export
-** Project 1
-#+begin_export html
-<h4 class="centered_title">
-<a href="https://josephelhaddad.github.io/reports/metrixlab" style="color: black;">
-Job Market Research (Big data)</a></h4>
-#+end_export
+** Job Market Research (Big data)
 
-In this project, I had to make sense of 1.4 Tb of unstructured data and make a custom report for each companies I reach; below is a link of one of the reports.
+Processed 1.4 TB of unstructured data locally to generate custom reports on companies’ hiring histories and employee career trajectories.
 
 #+begin_export html
  <button class="centered_more_button">
 <a href="https://josephelhaddad.github.io/reports/metrixlab">Read More</a>
  </button>
 #+end_export
-** Project 2
+** Sunken businesses on Google map
+
+/Preview:/
+#+INCLUDE: "plotly/b_in_sea2_nocdn.html" export html
+
+As I was scraping Google map I discover that 2.7% of all records I have, are of businesses located in the middle of the sea; out of these 2.7%, 73% businesses share the same coordinates [46.423669, -129.9427086]
+
 #+begin_export html
-<h4 class="centered_title">
-<a href="20250824T214000--job-market-research__note.html" style="color: black;">
-Job Market Research (Scraping) (Old)</a></h4>
+ <button class="centered_more_button">
+<a href="20250109T202901--google-map-plan__note.html">Read More</a>
+ </button>
 #+end_export
+** FARS data and NY project evaluation
+
+/Preview:/
+#+INCLUDE: "plotly/FARS/Fatality_pedestrians_top_states_nocdn.html" export html  :ifexport
+#+ATTR_HTML: :width 70%
+[[file:Resources/Images/fars.png]]
+
+After joining a Zoom call on data evaluations, I decided to start a project based on the subject we talked about: reducing fatalities in New York.
+I took a large dataset from FARS website, cleaned it, and analyze it.
+
+#+begin_export html
+ <button class="centered_more_button">
+<a href="20250606T221550--fars-report__note.html">Read More</a>
+ </button>
+#+end_export
+** Job Market Research (Scraping) (Old) :noexport:
 
 /Preview:/
 #+INCLUDE: "Resources/Plots/linkedin_research/sunburst__loation_type_nocdn.html" export html  :ifexport
@@ -77,24 +98,7 @@ As I was planning to start job hunting, again, I had the idea of gathering Linke
 <a href="20250824T214000--job-market-research__note.html">Read More</a>
  </button>
 #+end_export
-** Project 3
-#+begin_export html
-<h4 class="centered_title">
-<a href="20250109T202901--google-map-plan__note.html" style="color: black;">
-Sunken businesses on Google map</a></h4>
-#+end_export
-
-/Preview:/
-#+INCLUDE: "plotly/b_in_sea2_nocdn.html" export html
-
-As I was scraping Google map I discover that 2.7% of all records I have, are of businesses located in the middle of the sea; out of these 2.7%, 73% businesses share the same coordinates [46.423669, -129.9427086]
-
-#+begin_export html
- <button class="centered_more_button">
-<a href="20250109T202901--google-map-plan__note.html">Read More</a>
- </button>
-#+end_export
-** Project 4
+** Project 4 :noexport:
 #+begin_export html
 <h4 class="centered_title">
 <a href="20230308T205456--scraping-from-noxinfluencer-and-adding-additional-filters__script.html" style="color: black;">
@@ -118,7 +122,7 @@ Once a channel meet the criteria, I had to manually copy some information to a m
  </button>
 #+end_export
 
-** Project 5
+** Project 5 :noexport:
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240317T234631--how-i-found-you__note.html" style="color: black;">
@@ -141,7 +145,7 @@ Example of the email I sent is in the web page.
 <a href="20240317T234631--how-i-found-you__note.html">Read More</a>
  </button>
 #+end_export
-** Project 6
+** Project 6 :noexport:
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240401T034156--nsw-project__project.html" style="color: black;">
@@ -164,27 +168,7 @@ So, I went to find one of the high officials, extract as much as I can about him
 <a href="20240401T034156--nsw-project__project.html">Read More</a>
  </button>
 #+end_export
-** Project 7
-#+begin_export html
-<h4 class="centered_title">
-<a href="20250606T221550--fars-report__note.html" style="color: black;">
-Using government FARS data for evaluation</a></h4>
-#+end_export
-
-/Preview:/
-#+INCLUDE: "plotly/FARS/Fatality_pedestrians_top_states_nocdn.html" export html  :ifexport
-#+ATTR_HTML: :width 70%
-[[file:Resources/Images/fars.png]]
-
-After joining a Zoom call on data evaluations, I decided to start a project based on the subject we talked about: reducing fatalities in New York.
-I took a large dataset from FARS website, cleaned it, and analyze it.
-
-#+begin_export html
- <button class="centered_more_button">
-<a href="20250606T221550--fars-report__note.html">Read More</a>
- </button>
-#+end_export
-** Project 8
+** Project 8 :noexport:
 #+begin_export html
 <h4 class="centered_title">
 <a href="20240229T235456--harnessing-your-business-data__note.html" style="color: black;">
@@ -211,25 +195,21 @@ For Customer A, we will send coupons to encourage repeat purchases. For Customer
  </button>
 #+end_export
 
-* Professional Experience
+* Professional Experiences
 ** Currier Marketing
 - Duration: June 2024 - Mar 2025
 - Title: Data specialist
 - Key contributions
-  - Developed a script that scan a website and report errors (404s, bad redirects, duplicate content, JS dependency), improving the user experience.
-  - Developed a script that identify SEO cannibalization issues while maintaining confidentiality.
-  - Sourced and structured a proprietary database to build a Yelp-like search web app.
-  - Generated targeted prospect lists and developed creative outreach strategies.
-  - Crafted presentations using Canva to communicate complex ideas, report on progress.
+  - Built a website audit script detecting 404s, redirects, duplicate content, and JS issues—improving UX.
+  - Identified SEO cannibalization through custom scripting while ensuring data confidentiality.
+  - Sourced and structured proprietary data to develop a Yelp-like search web app.
+  - Generated targeted prospect lists and designed creative outreach campaigns.
+  - Created Canva presentations to simplify complex insights and track project progress.
 * Skills
-- Python programming
-  Libraries:
-  - [Data scraping] Requests, Selenium base, Beautiful Soup
-  - [Data manipulation] Pandas, Polars
-  - [Data visualization] Plotly Express, Matplotlib, GGraph
+- Programming languages: Python, R*
+- Libraries:
+  - [Data scraping] Requests, Selenium, Beautiful Soup
+  - [Data manipulation] Pandas, Polars, DuckDB(SQL)*
+  - [Data visualization] Plotly Express, Matplotlib*, ggplot2*
   - [Image manipulation] Pillow, OpenCV
-- Operating systems:
-  - Windows
-  - Gnu/Linux
-* Contact
-- Email: [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
+- Operating systems: Windows, Debian*
