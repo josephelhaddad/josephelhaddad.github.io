@@ -61,8 +61,7 @@ Processed 1.4 TB of unstructured data locally to generate custom reports on comp
 
 /Preview:/
 #+INCLUDE: "plotly/b_in_sea2_nocdn.html" export html
-
-As I was scraping Google map I discover that 2.7% of all records I have, are of businesses located in the middle of the sea; out of these 2.7%, 73% businesses share the same coordinates [46.423669, -129.9427086]
+As I scraped Google Maps data, I discovered that 3% of records were placed in the middle of the ocean. More strikingly, 73% of these erroneous entries clustered at the same coordinates: [46.423669, -129.9427086]—revealing a hidden “new Null Island” in North America, likely a default or fallback location in the data pipeline.
 
 #+begin_export html
  <button class="centered_more_button">
@@ -76,8 +75,7 @@ As I was scraping Google map I discover that 2.7% of all records I have, are of 
 #+ATTR_HTML: :width 70%
 [[file:Resources/Images/fars.png]]
 
-After joining a Zoom call on data evaluations, I decided to start a project based on the subject we talked about: reducing fatalities in New York.
-I took a large dataset from FARS website, cleaned it, and analyze it.
+Inspired by a discussion on Zoom about logic models, I analyzed raw FARS data to evaluate New York’s efforts to reduce pedestrian fatalities.
 
 #+begin_export html
  <button class="centered_more_button">
