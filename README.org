@@ -37,10 +37,12 @@
 #+end_export
 
 * About me
-Hi, I’m Joseph, a self-taught data analyst from Morocco inspired by Hans Rosling’s work.
-My hands-on experience in data scraping, analysis, and visualization fuels my innovative thinking—though I’d benefit from structured onboarding to align with team standards.
+Hello, I'm Joseph from Morocco.
 
-I’m available to work remotely at any time, fully flexible across time zones. I’m happy to start as a free intern, either part-time or full-time, to contribute and learn. Beyond the role, I hope to build meaningful, lasting connections with teammates.
+Inspired by Hans Rosling’s TED Talk, I taught myself data scraping, analysis, and visualization.
+This non-academic approach has given me a unique perspective, as reflected in my projects—though it also means I may require a thorough onboarding process to align with team standards.
+
+I’m open to starting as an intern, either full-time or part-time. Regarding time zones, I’m in UTC+1, but I’m flexible and can adjust my schedule to accommodate the team’s needs.
 
 Feel free to reach me at [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]
 
@@ -59,7 +61,6 @@ Processed 1.4 TB of unstructured data locally to generate custom reports on comp
 #+end_export
 ** Sunken businesses on Google map
 
-/Preview:/
 #+INCLUDE: "plotly/b_in_sea2_nocdn.html" export html
 As I scraped Google Maps data, I discovered that 3% of records were placed in the middle of the ocean. More strikingly, 73% of these erroneous entries clustered at the same coordinates: [46.423669, -129.9427086]—revealing a hidden “new Null Island” in North America, likely a default or fallback location in the data pipeline.
 
@@ -70,7 +71,6 @@ As I scraped Google Maps data, I discovered that 3% of records were placed in th
 #+end_export
 ** FARS data and NY project evaluation
 
-/Preview:/
 #+INCLUDE: "plotly/FARS/Fatality_pedestrians_top_states_nocdn.html" export html  :ifexport
 #+ATTR_HTML: :width 70%
 [[file:Resources/Images/fars.png]]
@@ -211,3 +211,27 @@ For Customer A, we will send coupons to encourage repeat purchases. For Customer
   - [Data visualization] Plotly Express, Matplotlib*, ggplot2*
   - [Image manipulation] Pillow, OpenCV
 - Operating systems: Windows, Debian*
+* Email :noexport:
+I’ll get straight to the point—since you may have other emails to check.
+
+I created a customer report on your company to demonstrate my internship worthiness.
+
+The report was made using public data and contains the company’s workforce trends.
+Here is the URL and an example below.
+
+One more credential I’d like to add—I was the first to discover the USA version of "null island" at [46.423669, -129.9427086].
+More on this on my website (https://josephelhaddad.github.io/20250109T202901--google-map-plan__note.html), or in a blog where I was featured (https://googlemapsmania.blogspot.com/2025/11/american-business-is-all-at-sea.html).
+
+If you’re still reading, thank you—now, a short introduction.
+
+Hello, I'm Joseph from Morocco.
+
+Inspired by Hans Rosling’s TED Talk, I taught myself data scraping, analysis, and visualization.
+This non-academic approach has given me a unique perspective, as reflected in my projects—though it also means I may require a thorough onboarding process to align with team standards.
+
+I’m open to starting as an intern, either full-time or part-time. Regarding time zones, I’m in UTC+1, but I’m flexible and can adjust my schedule to accommodate the team’s needs.
+
+Feel free to reach me at [[mailto:joseph.ergo@proton.me][joseph.ergo@proton.me]]; or replying to the email.
+
+Best wishes
+Joseph
