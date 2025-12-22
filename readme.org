@@ -5,7 +5,8 @@
 #+OPTIONS: author:nil
 #+OPTIONS: \n:t
 #+PANDOC_METADATA: geometry:margin=1cm
-
+#+HTML_HEAD: <script>window.onload = function() { var links = document.getElementsByTagName('a'); for (var i = 0; i < links.length; i++) { if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; links[i].rel = 'noopener'; } } };</script>
+#+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SB2K68EVD6');</script>
 
 
 #+BEGIN_HTML
@@ -13,7 +14,7 @@
 body {max-width: 50em;}
 .title {
 font-size: xxx-large;
-font-weight: bold;
+font-weight: bolder;
 }
   
 .subtitle {
@@ -24,59 +25,64 @@ h2{
 margin-left: 0.5rem;
 }
 
-@media print {
-h1, h2 {
-page-break-after: avoid;
-}
-}
 
 .contact {text-align: center; margin-top:-2rem}
-.contact a {
-white-space: nowrap;
-display: inline-block;
-}
+.contact a {white-space: nowrap; display: inline-block;}
 @media print {
-.contact {
-break-inside: avoid
-}
+.contact {break-inside: avoid}
 }
 
 
-html {
-scroll-behavior: smooth;
-}
+html {scroll-behavior: smooth;}
 
-body {
-/* High-quality typography for the whole resume */
-text-wrap: pretty; 
-}
+body {text-wrap: pretty;}
 
 @media print {
+
 /* Prevent sections from splitting across PDF pages */
-section, .job-item {
-break-inside: avoid;
-}
+section, .job-item {break-inside: avoid;}
   
 /* Keep headers on the same page as their sub-content */
-h1, h2 {
-break-after: avoid;
-}
+h1, h2 {break-after: avoid;page-break-after: avoid;}
+
+.html-only {display: none !important;}
+
 }
 
 
+
+.separator {
+  margin: 0 0.25em;
+  color: #666; /* Adjust color to match your text */
+  text-decoration: none !important;
+  pointer-events: none; /* Makes pipes non-clickable */
+  display: inline-block !important;
+}
+
+/* Ensure separators are properly hidden/showed */
+@media screen {
+  .pdf-only, .pdf-only.separator { display: none !important; }
+}
+
+@media print {
+  .html-only, .html-only.separator { display: none !important; }
+}
 </style>
 #+END_HTML
-
 #+begin_export html
 <p class="contact">
-<a href="mailto:joseph.ergo@proton.me">joseph.ergo@proton.me</a> |
-<a href="https://josephelhaddad.github.io">Portfolio</a> |
-<a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
+<a href="mailto:joseph.ergo@proton.me">joseph.ergo@proton.me</a>
+<span class="separator">|</span>
+<a target="_blank" rel="noopener" class="pdf-only" href="https://josephelhaddad.github.io">Portfolio</a>
+<span class="pdf-only separator">|</span>
+<a class="html-only" href="https://drive.google.com/file/d/1Tay9eO6rtB8Zpf_28pSNKoYA4NPrdlnG/view?usp=sharing">Resume PDF</a>
+<span class="html-only separator">|</span>
+<a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+<span class="separator">|</span>
 <a href="tel:+212713617633">+212 713-617-633</a>
 </p>
-<p style="text-align: center;"> Available immediately for full/part-time remote roles </p>
+<p style="text-align: center;">Available immediately for full/part-time remote roles </p>
 #+end_export
-
 * Summary
 Versatile and self-taught Data Analyst adept at navigating technical challenges to deliver data-driven intelligence.
 Leverages a continuous learning mindset to transform complex information into actionable insights.
@@ -114,3 +120,25 @@ Report example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
 ** Independent, Self-Directed Study
 /2016 — Present & Future/
 - Continuously enhancing data analysis and engineering skills through online resources and hands-on project work.
+
+#+begin_export html
+<style>
+  /* This style will be part of the HTML sent to the PDF converter */
+  @media print {
+    .html-only {
+      display: none !important;
+    }
+  }
+  @media screen {
+    .html-only {
+      display: block;
+    }
+  }
+</style>
+
+
+<div class="html-only">
+<h1> html only header</h1>
+  <p>This entire block, including this button: <button>Click Me</button>, will appear in the web page but will be <strong>automatically hidden</strong> when the HTML is converted to PDF via html5-pdf.</p>
+</div>
+#+end_export

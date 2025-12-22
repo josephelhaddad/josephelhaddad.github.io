@@ -166,17 +166,19 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
+  <script>window.onload = function() { var links = document.getElementsByTagName('a'); for (var i = 0; i < links.length; i++) { if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; links[i].rel = 'noopener'; } } };</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SB2K68EVD6');</script>
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Joseph EL HADDAD</h1>
-<p class="subtitle">Data analyst/scraper</p>
+<p class="subtitle">Data Analyst &amp; Scraper</p>
 </header>
 <style>
 body {max-width: 50em;}
 .title {
 font-size: xxx-large;
-font-weight: bold;
+font-weight: bolder;
 }
 .subtitle {
 font-size: x-large;
@@ -185,46 +187,48 @@ font-weight: bold;
 h2{
 margin-left: 0.5rem;
 }
-@media print {
-h1, h2 {
-page-break-after: avoid;
-}
-}
 .contact {text-align: center; margin-top:-2rem}
-.contact a {
-white-space: nowrap;
-display: inline-block;
-}
+.contact a {white-space: nowrap; display: inline-block;}
 @media print {
-.contact {
-break-inside: avoid
+.contact {break-inside: avoid}
 }
-}
-html {
-scroll-behavior: smooth;
-}
-body {
-
-text-wrap: pretty; }
+html {scroll-behavior: smooth;}
+body {text-wrap: pretty;}
 @media print {
 
-section, .job-item {
-break-inside: avoid;
+section, .job-item {break-inside: avoid;}
+
+h1, h2 {break-after: avoid;page-break-after: avoid;}
+.html-only {display: none !important;}
+}
+.separator {
+margin: 0 0.25em;
+color: #666; 
+text-decoration: none !important;
+pointer-events: none; 
+display: inline-block !important;
 }
 
-h1, h2 {
-break-after: avoid;
+@media screen {
+.pdf-only, .pdf-only.separator { display: none !important; }
 }
+@media print {
+.html-only, .html-only.separator { display: none !important; }
 }
 </style>
 
 <p class="contact">
-<a href="mailto:joseph.ergo@proton.me">joseph.ergo@proton.me</a> |
-<a href="https://josephelhaddad.github.io">Portfolio</a> |
-<a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
+<a href="mailto:joseph.ergo@proton.me">joseph.ergo@proton.me</a>
+<span class="separator">|</span>
+<a target="_blank" rel="noopener" class="pdf-only" href="https://josephelhaddad.github.io">Portfolio</a>
+<span class="pdf-only separator">|</span>
+<a class="html-only" href="https://drive.google.com/file/d/1Tay9eO6rtB8Zpf_28pSNKoYA4NPrdlnG/view?usp=sharing">Resume PDF</a>
+<span class="html-only separator">|</span>
+<a href="#">LinkedIn</a>
+<span class="separator">|</span>
 <a href="tel:+212713617633">+212 713-617-633</a>
 </p>
-<p style="text-align: center;"> Available immediately for full/part-time remote roles </p>
+<p style="text-align: center;">Available immediately for full/part-time remote roles </p>
 
 <h1 id="summary">Summary</h1>
 <p>Versatile and self-taught Data Analyst adept at navigating technical
@@ -275,7 +279,7 @@ web application.<br />
 </ul>
 <h1 id="skills">Skills</h1>
 <ul>
-<li><strong>Programming &amp; Languages</strong>: Python, R<br />
+<li><strong>Programming &amp; Languages</strong>: Python, R*<br />
 </li>
 <li><strong>Data Manipulation &amp; Analysis</strong>: pandas, Polars,
 DuckDB(SQL*)<br />
