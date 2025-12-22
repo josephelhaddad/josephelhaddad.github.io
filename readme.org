@@ -9,66 +9,7 @@
 #+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SB2K68EVD6');</script>
 
 
-#+BEGIN_HTML
-<style>
-body {max-width: 50em;}
-.title {
-font-size: xxx-large;
-font-weight: bolder;
-}
-  
-.subtitle {
-font-size: x-large;
-font-weight: bold;
-}
-h2{
-margin-left: 0.5rem;
-}
 
-
-.contact {text-align: center; margin-top:-2rem}
-.contact a {white-space: nowrap; display: inline-block;}
-@media print {
-.contact {break-inside: avoid}
-}
-
-
-html {scroll-behavior: smooth;}
-
-body {text-wrap: pretty;}
-
-@media print {
-
-/* Prevent sections from splitting across PDF pages */
-section, .job-item {break-inside: avoid;}
-  
-/* Keep headers on the same page as their sub-content */
-h1, h2 {break-after: avoid;page-break-after: avoid;}
-
-.html-only {display: none !important;}
-
-}
-
-
-
-.separator {
-  margin: 0 0.25em;
-  color: #666; /* Adjust color to match your text */
-  text-decoration: none !important;
-  pointer-events: none; /* Makes pipes non-clickable */
-  display: inline-block !important;
-}
-
-/* Ensure separators are properly hidden/showed */
-@media screen {
-  .pdf-only, .pdf-only.separator { display: none !important; }
-}
-
-@media print {
-  .html-only, .html-only.separator { display: none !important; }
-}
-</style>
-#+END_HTML
 #+begin_export html
 <p class="contact">
 <a href="mailto:joseph.ergo@proton.me">joseph.ergo@proton.me</a>
