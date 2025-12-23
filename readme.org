@@ -1,13 +1,11 @@
 
 #+title: Joseph EL HADDAD
-#+subtitle: Data analyst/scraper
+#+subtitle: Data Analyst & Scraper
 
 #+OPTIONS: author:nil
 #+OPTIONS: \n:t
 #+PANDOC_METADATA: geometry:margin=1cm
-#+HTML_HEAD: <script>window.onload = function() { var links = document.getElementsByTagName('a'); for (var i = 0; i < links.length; i++) { if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; links[i].rel = 'noopener'; } } };</script>
-#+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=G-SB2K68EVD6"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SB2K68EVD6');</script>
-
+#+PANDOC_OPTIONS: include-in-header:setup/headers.html:setup/style.css
 
 
 #+begin_export html
@@ -18,7 +16,7 @@
 <span class="pdf-only separator">|</span>
 <a class="html-only" href="https://drive.google.com/file/d/1Tay9eO6rtB8Zpf_28pSNKoYA4NPrdlnG/view?usp=sharing">Resume PDF</a>
 <span class="html-only separator">|</span>
-<a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+<a href="#">Linked-In</a>
 <span class="separator">|</span>
 <a href="tel:+212713617633">+212 713-617-633</a>
 </p>
@@ -32,12 +30,12 @@ Leverages a continuous learning mindset to transform complex information into ac
 /Independent Data Scraping & Analysis Project/
 - First to discover and document a systemic error placing *over 100,000 U.S. businesses* in the ocean during EDA; *~73% shared one coordinate [46.4°N, 129.9°W]*.
 - Analysis and visualizations were featured in a blog article [[https://googlemapsmania.blogspot.com/2025/11/american-business-is-all-at-sea.html][GoogleMapsMania - American Business is All at Sea]].
-More in my post: [[https://josephelhaddad.github.io/20250109T202901--google-map-plan__note.html#table-of-contents][Link]]
+Learn More: [[https://josephelhaddad.github.io/20250109T202901--google-map-plan__note.html#table-of-contents][Link]]
 ** Large-Scale Talent Intelligence Analysis
 /Independent Data Engineering & Analysis Project/
 - Engineered a local data pipeline to process and structure *1.4 TB of unstructured data* using DuckDB, enabling the generation of custom reports on company hiring trends, talent networks, and employee career trajectories.
 
-Report example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
+View Example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
 * Experience
 ** Data Analyst | Courier Marketing
 /Specializing in Data Collection & Web Analytics/
@@ -48,7 +46,7 @@ Report example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
 - Tracked project progress and communicated insights by presenting findings and proposing new initiatives using Canva.
 - Managed end-to-end data collection projects, building targeted contact lists for outreach and aggregating business data for a listing web application.
 * Skills
-- *Programming & Languages*: Python, R
+- *Programming & Languages*: Python, R*
 - *Data Manipulation & Analysis*: pandas, Polars, DuckDB(SQL*)
 - *Data Visualization*: Matplotlib, Plotly, ggplot2*
 - *Web Scraping & Automation*: requests, Beautiful Soup, Selenium
@@ -62,24 +60,8 @@ Report example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
 /2016 — Present & Future/
 - Continuously enhancing data analysis and engineering skills through online resources and hands-on project work.
 
+
 #+begin_export html
-<style>
-  /* This style will be part of the HTML sent to the PDF converter */
-  @media print {
-    .html-only {
-      display: none !important;
-    }
-  }
-  @media screen {
-    .html-only {
-      display: block;
-    }
-  }
-</style>
-
-
-<div class="html-only">
-<h1> html only header</h1>
-  <p>This entire block, including this button: <button>Click Me</button>, will appear in the web page but will be <strong>automatically hidden</strong> when the HTML is converted to PDF via html5-pdf.</p>
-</div>
+<h1 class="html-only">Portfolio Analytics</h1>
+<iframe data-external="1" class="html-only looker-report" src="https://lookerstudio.google.com/embed/reporting/acbdd3a4-e607-44f2-be33-5e0b07dd4a7a/page/h8PjF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
 #+end_export
