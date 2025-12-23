@@ -167,8 +167,24 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   
-
-  <script>window.onload = function() { var links = document.getElementsByTagName('a'); for (var i = 0; i < links.length; i++) { if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; links[i].rel = 'noopener'; } } };</script>
+  <script>
+      window.onload = function() {
+          // Get ALL links on the page
+          var allLinks = document.querySelectorAll('a');
+          for (var i = 0; i < allLinks.length; i++) {
+              var link = allLinks[i];
+              // Get the link's full href
+              var href = link.getAttribute('href');
+              // Check if it's an external HTTP/HTTPS link
+              if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+                  // Apply attributes to open in a new, secure tab
+                  link.setAttribute('target', '_blank');
+                  // 'noopener noreferrer' is crucial for security and performance
+                  link.setAttribute('rel', 'noopener noreferrer');
+              }
+          }
+      };
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script>
