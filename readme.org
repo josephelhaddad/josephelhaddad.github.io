@@ -25,42 +25,58 @@
 #+end_export
 * Summary
 Versatile, self-taught Data Specialist with a proven track record of delivering data-driven intelligence for CEOs in the US, UK, and UAE.
+
 Expert in transforming complex, unstructured information into actionable business insights through custom Python automation and large-scale web scraping.
+
 Known for a security-conscious approach to end-to-end project management and a "hands-on" technical mindset.
 * Experience
 ** Data Lead @@html:<span class="date-right">Feb 2026 – Present</span>@@
 *** Hive Gate, Dubai (Remote)
 - *Lead Generation & Pipeline Automation*: Engineered an automated data pipeline to scrape and structure a database of 100,000+ target institutions for a user acquisition initiative.
+  
 - *Data Enrichment & Segmentation*: Enhanced raw data to identify high-value communication channels (Whats-App, direct scheduling links), allowing the sales team to prioritize the most effective outreach mediums.
+  
 - *Speed-to-Lead Optimization*: Streamlined the initial outreach phase by delivering actionable datasets, equipping the team to initiate high-impact first connections and drive sign-ups.
-** Researcher - Volunteer @@html:<span class="date-right">Jan 2026 – March 2026</span>@@
+** Researcher @@html:<span class="date-right">Jan 2026 – March 2026</span>@@
 *** Happy City Index, London (Remote)
 - *Data Sourcing & Verification*: Sourced and documented answers from official publications, supplementing research by directly contacting municipal authorities for clarification.
+  
 - *Quality Assurance*: Peer-reviewed and validated research submitted by other contributors to ensure consistency and maintain data integrity.
+  
 - *Team Recognition*: Recognized as a contributing researcher on the organization's official [[https://happy-city-index.com/OurTeam/#:~:text=JOSEPH%20EL%20HADDAD][team page]].
 ** Data & Automation Analyst @@html:<span class="date-right">June 2024 – March 2025</span>@@
 *** Currier Marketing, California (Remote) 
 - *Technical SEO Auditing*: Developed automated Python scripts to audit websites for technical health, identifying critical issues like 404 errors, duplicate content, and keyword cannibalization.
+  
 - *Data Strategy & Visualization*: Tracked project progress and effectively communicated actionable insights to stakeholders by presenting findings and proposing new initiatives.
+  
 - *End-to-End Data Collection*: Managed data collection projects by building targeted contact lists for outreach and aggregating business data for web applications.
 * Projects
 ** Discovery of Google Maps Anomaly
 - *Systemic Error Identification*: First to discover and document a systemic geolocation error placing over 100,000 U.S. businesses in the ocean during Exploratory Data Analysis (EDA).
+  
 - *Data Pattern Recognition*: Identified that approximately 73% of the affected businesses shared a single anomalous coordinate [46.4°N, 129.9°W].
+  
 - *Industry Publication*: Featured in the industry blog [[https://googlemapsmania.blogspot.com/2025/11/american-business-is-all-at-sea.html#:~:text=Joseph%20El%20Haddad][GoogleMapsMania - American Business is All at Sea]].
 
 Learn More: [[https://josephelhaddad.github.io/20250109T202901--google-map-plan__note.html][Link]]
 ** Large-Scale Talent Intelligence Analysis
 - Big Data Processing: Engineered a local data pipeline to process and structure 1.4 TB of unstructured data using DuckDB.
+  
 - Actionable Reporting: Enabled the generation of custom reports on company hiring trends, talent networks, and employee career trajectories.
 
 View Example: [[https://josephelhaddad.github.io/reports/metrixlab][Link]]
 * Skills
 - *Programming & Databases*: Python, SQL (DuckDB), R, Bash.
+  
 - *Data Engineering*: Pandas, Polars, DuckDB, NumPy.
+  
 - *Extraction & Automation*: Selenium, Beautiful Soup, Requests, OpenCV.
+  
 - *Technical Environment*: Debian (GNU/Linux), GNU Emacs, Git.
+  
 - *Software & Visualization*: Microsoft Excel, Google Sheets, Canva.
+  
 - *Core Practices*: Data Privacy, Security-Conscious Development, EDA.
 * Education
 ** Independent, Self-Directed Study @@html:<span class="date-right">2016 – Present</span>@@
